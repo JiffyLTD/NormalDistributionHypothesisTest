@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33712.159
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NDHTAPI", "NDHTAPI\NDHTAPI.csproj", "{3FAB0FBB-53D5-46E2-8328-6A91FB1A5F39}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "ndhtclient", "NDHTClient\ndhtclient.esproj", "{F21AAF84-A922-42CF-9B12-458D01A980F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3FAB0FBB-53D5-46E2-8328-6A91FB1A5F39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FAB0FBB-53D5-46E2-8328-6A91FB1A5F39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FAB0FBB-53D5-46E2-8328-6A91FB1A5F39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FAB0FBB-53D5-46E2-8328-6A91FB1A5F39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F21AAF84-A922-42CF-9B12-458D01A980F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F21AAF84-A922-42CF-9B12-458D01A980F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F21AAF84-A922-42CF-9B12-458D01A980F1}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F21AAF84-A922-42CF-9B12-458D01A980F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F21AAF84-A922-42CF-9B12-458D01A980F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F21AAF84-A922-42CF-9B12-458D01A980F1}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8F25DAE8-F0AF-4574-84DC-CD4481AC8BFB}
+	EndGlobalSection
+EndGlobal

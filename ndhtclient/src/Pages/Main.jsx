@@ -4,11 +4,11 @@ import MainBlock from "../Components/MainBlock/MainBlock";
 const Main = () => {
 
   document.title = "Главная";
-  
+
   const coursWorkTopic = {
     title: "Тема курсовой работы",
     content:
-      "Требуется проверить гипотезу о том, что случайная величина Х – вес упаковок – распределена по нормальному закону."
+      "Требуется проверить гипотезу о том, что случайная величина Х – распределена по нормальному закону."
   };
 
   const technologyStackTopic = {

@@ -1,5 +1,4 @@
 import React from "react";
-import { InfinitySpin } from "react-loader-spinner";
 
 const Error = () => {
   document.title = "404 страница не найдена";

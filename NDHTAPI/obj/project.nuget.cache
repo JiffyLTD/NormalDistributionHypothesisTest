@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "IGpiOeajWu3PZobNZuQUUjOHU4JF80uyA8qCC5QgS70YHMy5umhS2HCDx+wpSzTKRwcwqwp/l+dgNR9McW83og==",
+  "dgSpecHash": "G81VYslKB3RWou4dsdPmAR9jjdL3NmbV0qVUJ+S54eFSdbf2/4+/uIVNULF32LVGpZRV548eME0sWgRtT1KHSQ==",
   "success": true,
   "projectFilePath": "A:\\УЧЕБА\\3КУРС\\6СЕМЕСТР\\ИС\\Курсач\\NormalDistributionHypothesisTest\\NDHTAPI\\NDHTAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\akope\\.nuget\\packages\\mathnet.numerics\\5.0.0\\mathnet.numerics.5.0.0.nupkg.sha512",
     "C:\\Users\\akope\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.5\\microsoft.aspnetcore.openapi.7.0.5.nupkg.sha512",
     "C:\\Users\\akope\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\akope\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",

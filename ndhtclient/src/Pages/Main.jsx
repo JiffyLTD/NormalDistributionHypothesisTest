@@ -2,6 +2,9 @@ import React from "react";
 import MainBlock from "../Components/MainBlock/MainBlock";
 
 const Main = () => {
+
+  document.title = "Главная";
+  
   const coursWorkTopic = {
     title: "Тема курсовой работы",
     content:
@@ -22,7 +25,7 @@ const Main = () => {
         <br />
         Родионов Г.А. - главный разработчик
         <br />
-        Беспалов Д.С. - помощник по работе с документами, тестировщик
+        Беспалов Д.С. - тестировщик, помощник по работе с документами
         <br />
         Фролов А.П. - помощник по работе с документами
       </p>

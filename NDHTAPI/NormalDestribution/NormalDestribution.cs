@@ -7,9 +7,9 @@
         /// </summary>
         /// <param name="arr">Массив сумма элементов которого нам нужна</param>
         /// <returns>Сумма</returns>
-        public static double GetSum(double[] arr)
+        public static  Task<double> GetSum(double[] arr)
         {
-            return arr.Sum(x => x);
+            return Task.FromResult(arr.Sum(x => x));
         }
 
         /// <summary>
@@ -18,9 +18,9 @@
         /// <param name="startInterval">Список старта интервалов</param>
         /// <param name="endInterval">Список конца интервалов</param>
         /// <returns>Длина частичного интервала(h)</returns>
-        public static double GetPartialIntervalLength(double[] startInterval, double[] endInterval)
+        public static Task<double> GetPartialIntervalLength(double[] startInterval, double[] endInterval)
         {
-            return startInterval[0] - endInterval[0];
+            return Task.FromResult(Math.Abs(startInterval[0] - endInterval[0]));
         }
 
         /// <summary>
@@ -29,7 +29,7 @@
         /// <param name="startInterval">Список старта интервалов</param>
         /// <param name="endInterval">Список конца интервалов</param>
         /// <returns>Список середин интервалов(xi)</returns>
-        public static double[] GetMiddleIntervals(double[] startInterval, double[] endInterval)
+        public static Task<double[]> GetMiddleIntervals(double[] startInterval, double[] endInterval)
         {
             double[] middleInterval = new double[startInterval.Length];
 
@@ -38,7 +38,7 @@
                 middleInterval[i] = (startInterval[i] + endInterval[i]) / 2;
             }
 
-            return middleInterval;
+            return Task.FromResult(middleInterval);
         }
 
         /// <summary>
@@ -48,7 +48,7 @@
         /// <param name="middleIntervals">Список середин интервалов</param>
         /// <param name="sampleSize">Объем выборки</param>
         /// <returns>Выборочное среднее(xini, xe)</returns>
-        public static (double[] sampleMeans, double sampleMean) GetSampleMean(double[] intervalFrequency, double[] middleIntervals, double sampleSize)
+        public static async Task<(double[] sampleMeans, double sampleMean)> GetSampleMean(double[] intervalFrequency, double[] middleIntervals, double sampleSize)
         {
             double[] sampleMeans = new double[intervalFrequency.Length];
 
@@ -57,7 +57,7 @@
                 sampleMeans[i] = intervalFrequency[i] * middleIntervals[i];
             }
 
-            var sampleMean = GetSum(sampleMeans) / sampleSize;
+            var sampleMean = await GetSum(sampleMeans) / sampleSize;
 
             return (sampleMeans, sampleMean);
         }
@@ -70,16 +70,16 @@
         /// <param name="sampleSize">Объем выборки</param>
         /// <param name="sampleMean">Выборочное среднее</param>
         /// <returns>Выборочное среднее квадратическое отклонение(x2ini, e)</returns>
-        public static (double[], double stdDeviation) GetStandartDeviation(double[] intervalFrequency, double[] middleIntervals, double sampleSize, double sampleMean)
+        public static async Task<(double[] stdDeviations, double stdDeviation)> GetStandartDeviation(double[] intervalFrequency, double[] middleIntervals, double sampleSize, double sampleMean)
         {
             double[] sampleMeans = new double[intervalFrequency.Length];
 
             for (int i = 0; i < intervalFrequency.Length; i++)
             {
-                sampleMeans[i] = Math.Pow(intervalFrequency[i], 2) * middleIntervals[i];
+                sampleMeans[i] = Math.Pow(middleIntervals[i], 2) * intervalFrequency[i];
             }
 
-            var stdDeviation = Math.Sqrt((GetSum(sampleMeans) / sampleSize) - Math.Pow(sampleMean, 2));
+            var stdDeviation = Math.Sqrt((await GetSum(sampleMeans) / sampleSize) - Math.Pow(sampleMean, 2));
 
             return (sampleMeans, stdDeviation);
         }
@@ -91,7 +91,7 @@
         /// <param name="sampleMean">Выборочное среднее отклонение</param>
         /// <param name="stdDeviation">Выборочное среднее квадратическое отклонение</param>
         /// <returns>Стандартизированные значения(zi)</returns>
-        public static double[] StandartizeValues(double[] middleIntervals, double sampleMean, double stdDeviation)
+        public static Task<double[]> GetStandartizeValues(double[] middleIntervals, double sampleMean, double stdDeviation)
         {
             double[] stdValues = new double[middleIntervals.Length];
 
@@ -100,7 +100,7 @@
                 stdValues[i] = (middleIntervals[i] - sampleMean) / stdDeviation;
             }
 
-            return stdValues;
+            return Task.FromResult(stdValues);
         }
 
         /// <summary>
@@ -108,7 +108,7 @@
         /// </summary>
         /// <param name="stdValues">Стандартизированные значения(zi)</param>
         /// <returns>Значение функции плнотности стандартного нормального распределения (f(zi))</returns>
-        public static double[] GetStandartNormalDestribution(double[] stdValues)
+        public static Task<double[]> GetStandartNormalDestribution(double[] stdValues)
         {
             double[] stdNormalDestribution = new double[stdValues.Length];
             double k = 1 / (Math.Sqrt(2 * Math.PI));
@@ -118,7 +118,7 @@
                 stdNormalDestribution[i] = Math.Exp(-0.5 * Math.Pow(stdValues[i], 2)) * k;
             }
 
-            return stdNormalDestribution;
+            return Task.FromResult(stdNormalDestribution);
         }
 
         /// <summary>
@@ -129,7 +129,7 @@
         /// <param name="stdDeviation">Выборочное среднее квадратическое отклонение</param>
         /// <param name="stdNormalDestribution">Значение функции плнотности стандартного нормального распределения</param>
         /// <returns>Теоритические частоты (ni)</returns>
-        public static double[] GetTheoreticalFrequencies(double partialIntervalLength, double sampleSize, double stdDeviation, double[] stdNormalDestribution)
+        public static Task<double[]> GetTheoreticalFrequencies(double partialIntervalLength, double sampleSize, double stdDeviation, double[] stdNormalDestribution)
         {
             double[] theoreticalFrequenices = new double[stdNormalDestribution.Length];
 
@@ -138,7 +138,7 @@
                 theoreticalFrequenices[i] = (partialIntervalLength * sampleSize / stdDeviation) * stdNormalDestribution[i];
             }
 
-            return theoreticalFrequenices;
+            return Task.FromResult(theoreticalFrequenices);
         }
     }
 }

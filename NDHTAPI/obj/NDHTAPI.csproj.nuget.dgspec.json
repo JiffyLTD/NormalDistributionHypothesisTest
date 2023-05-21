@@ -49,6 +49,10 @@
               "target": "Package",
               "version": "[7.0.5, )"
             },
+            "Perfolizer": {
+              "target": "Package",
+              "version": "[0.3.4, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"

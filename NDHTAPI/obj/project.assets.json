@@ -58,6 +58,15 @@
           }
         }
       },
+      "Perfolizer/0.3.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Perfolizer.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Perfolizer.dll": {}
+        }
+      },
       "Swashbuckle.AspNetCore/6.4.0": {
         "type": "package",
         "dependencies": {
@@ -406,6 +415,20 @@
         "microsoft.openapi.nuspec"
       ]
     },
+    "Perfolizer/0.3.4": {
+      "sha512": "R8jDznaLop+JEsz6TDt97cSPOVeHjC0+lCgzdFS4PDMrEBhqXAFSIXQ4wMlk9o+V14wZsIkXZqjQoDeFBfz5iA==",
+      "type": "package",
+      "path": "perfolizer/0.3.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "dino.png",
+        "lib/netstandard2.0/Perfolizer.dll",
+        "lib/netstandard2.1/Perfolizer.dll",
+        "perfolizer.0.3.4.nupkg.sha512",
+        "perfolizer.nuspec"
+      ]
+    },
     "Swashbuckle.AspNetCore/6.4.0": {
       "sha512": "eUBr4TW0up6oKDA5Xwkul289uqSMgY0xGN4pnbOIBqCcN9VKGGaPvHX3vWaG/hvocfGDP+MGzMA0bBBKz2fkmQ==",
       "type": "package",
@@ -492,6 +515,7 @@
     "net7.0": [
       "MathNet.Numerics >= 5.0.0",
       "Microsoft.AspNetCore.OpenApi >= 7.0.5",
+      "Perfolizer >= 0.3.4",
       "Swashbuckle.AspNetCore >= 6.4.0"
     ]
   },
@@ -542,6 +566,10 @@
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
             "version": "[7.0.5, )"
+          },
+          "Perfolizer": {
+            "target": "Package",
+            "version": "[0.3.4, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",

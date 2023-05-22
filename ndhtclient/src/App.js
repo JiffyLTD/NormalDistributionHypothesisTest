@@ -1,14 +1,16 @@
 import { BrowserRouter } from "react-router-dom";
 import Header from "./Components/Header/Header";
 import MyRoutes from "./Components/MyRoutes/MyRoutes";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   return (
     <div className="container">
-      <Header/>
+      <Header />
       <BrowserRouter>
-        <MyRoutes/>
+        <MyRoutes />
       </BrowserRouter>
+      <Footer />
     </div>
   );
 }

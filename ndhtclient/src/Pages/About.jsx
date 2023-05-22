@@ -1,5 +1,6 @@
 import React from "react";
 import TableResultExample from "../Components/UI/TableResultExample/TableResultExample";
+import graficImg from "../Images/grafic.png"
 
 const About = () => {
   document.title = "Руководство";
@@ -58,8 +59,10 @@ const About = () => {
         </p>
       </div>
       <div className="mt-2">
-        <h3>4. Получить результаты обработки результатов.</h3>
+        <h3>4. Получить результаты обработки данных.</h3>
         <p className="ms-5 fs-5">
+        <span className="fw-bold">Результаты выводятся в виде таблицы и графика</span><br />
+        <span className="fw-bold">Таблица</span>
           <TableResultExample />
          <span className="fw-bold">Где входные данные :</span> <br />
           h - длина частичного интервала <br />
@@ -83,24 +86,25 @@ const About = () => {
           x <sup>2</sup> <sub>крит</sub> - критическое значение распределения<br /> 
           x <sup>2</sup> <sub>набл</sub> - критерий согласия Пирсона <br />
           k - количество степеней свободы <br />
+          <span className="fw-bold">График</span> <br />
+          <img src={graficImg} alt="img" width='600px' height='350px'/>
+          <p className="text-muted">Пример графика</p>
         </p>
       </div>
       <div className="mt-2">
-        <h3>5. Сравнить полученное значение с критическим значением.</h3>
+        <h3>5. Сохранение результатов.</h3>
         <p className="ms-5 fs-5">
-          По формуле χ<sup>2</sup>
-          <sub>α,k-3</sub> из таблицы распределения хи-квадрат с уровнем
-          значимости α и числом степеней свободы k-3
-          <br />
-          (три параметра: среднее, дисперсия и объем выборки).
-        </p>
-      </div>
-      <div className="mt-2">
-        <h3>6. Сделать выводы.</h3>
-        <p className="ms-5 fs-5">
-          Если χ<sup>2</sup> &lt; χ<sup>2</sup>
-          <sub>α,k-3</sub> , то принять гипотезу о нормальном распределении,
-          иначе - отвергнуть.
+          Вы можете сохранить результаты в формате .pdf или .docx <br />
+          Нажав на соответствующие кнопки &nbsp;
+          <button type="button" class="btn btn-danger">
+            Сохранить в .pdf
+          </button>
+          &nbsp;
+          или 
+          &nbsp;
+          <button type="button" class="btn btn-primary">
+            Сохранить в .docx
+          </button>
         </p>
       </div>
     </div>

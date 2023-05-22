@@ -3,7 +3,7 @@ import React from "react";
 const TableResultExample = () => {
   return (
     <table className="border border-primary mt-2">
-      <caption>Пример таблицы результатов</caption>
+      <caption>Пример таблицы результатов - *data - обработанные данные</caption>
       <tr>
         <td className="border border-primary text-center">Начало интервала</td>
         <td className="border border-primary text-center">Конец интервала</td>
@@ -106,6 +106,18 @@ const TableResultExample = () => {
         <td className="border border-primary text-center">data</td>
         <td className="border border-primary text-center">data</td>
 
+      </tr>
+      <tr>
+        <td className="border border-primary text-center">data</td> 
+        <td className="border border-primary text-center">data</td>
+        <td className="border border-primary text-center">data</td>
+        <td className="border border-primary text-center">data</td>
+        <td className="border border-primary text-center">data</td>
+        <td className="border border-primary text-center">data</td>
+        <td className="border border-primary text-center">data</td>
+        <td className="border border-primary text-center">data</td>
+        <td className="border border-primary text-center">data</td>
+        <td className="border border-primary text-center">data</td>
       </tr>
       <tr>
         <td className="border border-primary text-center">h =</td>

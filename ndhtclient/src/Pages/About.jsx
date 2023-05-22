@@ -1,6 +1,6 @@
 import React from "react";
 import TableResultExample from "../Components/UI/TableResultExample/TableResultExample";
-import graficImg from "../Images/grafic.png"
+import ChartExample from '../Components/UI/ChartExample/ChartExample';
 
 const About = () => {
   document.title = "Руководство";
@@ -13,7 +13,7 @@ const About = () => {
         <p className="ms-5 fs-5">
           Загрузить файл формата .csv и вида -
           <table className="border border-primary mt-2">
-            <caption>Пример таблицы файла .csv</caption>
+            <caption>Пример таблицы файла .csv - *data - данные</caption>
             <tr>
               <td className="border border-primary">
                 Hi, I'm your first cell.
@@ -52,7 +52,7 @@ const About = () => {
         <p className="ms-5 fs-5">
           После загрузки файла с данными и выбора уровня значимости <br />-
           отправить данные на сервер с помощью кнопки{" "}
-          <button type="button" class="btn btn-primary">
+          <button type="button" className="btn btn-primary">
             Загрузить данные
           </button>
           <br />и затем подождать результата обработки данных
@@ -87,8 +87,8 @@ const About = () => {
           x <sup>2</sup> <sub>набл</sub> - критерий согласия Пирсона <br />
           k - количество степеней свободы <br />
           <span className="fw-bold">График</span> <br />
-          <img src={graficImg} alt="img" width='600px' height='350px'/>
-          <p className="text-muted">Пример графика</p>
+          <ChartExample/>
+          <span className="text-muted">Пример графика</span>
         </p>
       </div>
       <div className="mt-2">
@@ -96,13 +96,13 @@ const About = () => {
         <p className="ms-5 fs-5">
           Вы можете сохранить результаты в формате .pdf или .docx <br />
           Нажав на соответствующие кнопки &nbsp;
-          <button type="button" class="btn btn-danger">
+          <button type="button" className="btn btn-danger">
             Сохранить в .pdf
           </button>
           &nbsp;
           или 
           &nbsp;
-          <button type="button" class="btn btn-primary">
+          <button type="button" className="btn btn-primary">
             Сохранить в .docx
           </button>
         </p>

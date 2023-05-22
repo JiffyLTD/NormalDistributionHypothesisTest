@@ -37,7 +37,7 @@
 
             var stdDev = await NormalDestribution.GetStandartDeviation(intervalsFrequency, middleIntervals, sampleSize, sample.sampleMean);
             pop.StandartDeviations = stdDev.stdDeviations;
-            pop.StandartDeviation = Math.Round(stdDev.stdDeviation, 2);
+            pop.StandartDeviation = stdDev.stdDeviation;
 
             var stdValues = await NormalDestribution.GetStandartizeValues(middleIntervals, sample.sampleMean, stdDev.stdDeviation);
             pop.StandartizeValues = stdValues;
@@ -50,11 +50,11 @@
 
             var pirsonsValues = await Goodness.PearsonObservable(intervalsFrequency, theoreticalFrequencies);
             pop.PirsonsValues = pirsonsValues.pearsonValues;
-            pop.PirsonsValuesSum = Math.Round(pirsonsValues.pearsonValue, 2);
+            pop.PirsonsValuesSum = pirsonsValues.pearsonValue;
 
             var degreesOfFreedom = theoreticalFrequencies.Length - 2 - 1;
             var pirsonMean = await Goodness.ChiInv(probability, degreesOfFreedom);
-            pop.PirsonsMean = Math.Round(pirsonMean, 2);
+            pop.PirsonsMean = pirsonMean;
 
             return pop;
         }

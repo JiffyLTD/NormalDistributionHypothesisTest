@@ -1,18 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "V7sx2IT1TSsgM9+eWBxs6mUvEDzBG7f1fU/F3O6/yTm80c488k3X7NJMSXF6mT5axsTeH6ywk4plZfBECX+ZKA==",
+  "dgSpecHash": "jHK+gFgAZ3ufW9waYFYjJkOj46aWxWx1plQS5FeM6lbuNWOzwKRu/vfih3UykC0vNVH8xbX8W0t3CrJ5DC4Gpg==",
   "success": true,
-  "projectFilePath": "A:\\УЧЕБА\\3КУРС\\6СЕМЕСТР\\ИС\\Курсач\\NormalDistributionHypothesisTest\\NDHTAPI\\NDHTAPI.csproj",
+  "projectFilePath": "D:\\УЧЕБА\\3КУРС\\6СЕМЕСТР\\ИС\\NormalDistributionHypothesisTest\\NDHTAPI\\NDHTAPI.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\akope\\.nuget\\packages\\mathnet.numerics\\5.0.0\\mathnet.numerics.5.0.0.nupkg.sha512",
-    "C:\\Users\\akope\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.5\\microsoft.aspnetcore.openapi.7.0.5.nupkg.sha512",
-    "C:\\Users\\akope\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
-    "C:\\Users\\akope\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
-    "C:\\Users\\akope\\.nuget\\packages\\perfolizer\\0.3.4\\perfolizer.0.3.4.nupkg.sha512",
-    "C:\\Users\\akope\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
-    "C:\\Users\\akope\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
-    "C:\\Users\\akope\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
-    "C:\\Users\\akope\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
+    "C:\\Users\\gosha\\.nuget\\packages\\mathnet.numerics\\5.0.0\\mathnet.numerics.5.0.0.nupkg.sha512",
+    "C:\\Users\\gosha\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.5\\microsoft.aspnetcore.openapi.7.0.5.nupkg.sha512",
+    "C:\\Users\\gosha\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\gosha\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
+    "C:\\Users\\gosha\\.nuget\\packages\\perfolizer\\0.3.4\\perfolizer.0.3.4.nupkg.sha512",
+    "C:\\Users\\gosha\\.nuget\\packages\\swashbuckle.aspnetcore\\6.4.0\\swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
+    "C:\\Users\\gosha\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.4.0\\swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
+    "C:\\Users\\gosha\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.4.0\\swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
+    "C:\\Users\\gosha\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.4.0\\swashbuckle.aspnetcore.swaggerui.6.4.0.nupkg.sha512"
   ],
   "logs": []
 }

@@ -9,9 +9,11 @@
     overflow: auto;
     padding:0;
     margin:0px;
+    z-index: 0;
   }
   .cube {
     position: absolute;
+    z-index: -1;
     top: 80vh;
     left: 45vw;
     width: 10px;
@@ -65,7 +67,7 @@
   @keyframes cube {
     from {
       transform: scale(0) rotate(0deg) translate(-50%, -50%);
-      opacity: 0.2;
+      opacity: 1;
     }
     to {
       transform: scale(20) rotate(960deg) translate(-50%, -50%);

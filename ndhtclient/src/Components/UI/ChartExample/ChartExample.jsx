@@ -38,9 +38,13 @@ const ChartExample = () => {
         backgroundColor: "MediumVioletRed",
         data: [6, 38, 44, 34, 8],
       },
-    ]
+    ],
   };
-  return <Chart data={data} />;
+  return (
+    <div className="w-50">
+      <Chart data={data} />
+    </div>
+  );
 };
 
 export default ChartExample;

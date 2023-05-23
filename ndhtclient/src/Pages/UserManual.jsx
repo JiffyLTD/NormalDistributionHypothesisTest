@@ -2,8 +2,8 @@ import React from "react";
 import TableResultExample from "../Components/UI/TableResultExample/TableResultExample";
 import ChartExample from '../Components/UI/ChartExample/ChartExample';
 
-const About = () => {
-  document.title = "Руководство";
+const UserManual = () => {
+  document.title = "Руководство пользования";
 
   return (
     <div className="border rounded bg-white container">
@@ -94,7 +94,7 @@ const About = () => {
       <div className="mt-2">
         <h3>5. Сохранение результатов.</h3>
         <p className="ms-5 fs-5">
-          Вы можете сохранить результаты в формате .pdf или .docx <br />
+          Вы можете сохранить результаты в формате .pdf или .doc <br />
           Нажав на соответствующие кнопки &nbsp;
           <button type="button" className="btn btn-danger">
             Сохранить в .pdf
@@ -103,7 +103,7 @@ const About = () => {
           или 
           &nbsp;
           <button type="button" className="btn btn-primary">
-            Сохранить в .docx
+            Сохранить в .doc
           </button>
         </p>
       </div>
@@ -111,4 +111,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default UserManual;

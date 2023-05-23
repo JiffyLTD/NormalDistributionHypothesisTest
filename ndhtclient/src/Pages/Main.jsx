@@ -6,40 +6,13 @@ const Main = () => {
   document.title = "Главная";
 
   const coursWorkTopic = {
-    title: "Тема курсовой работы",
-    content:
-      "Требуется проверить гипотезу о том, что случайная величина Х – распределена по нормальному закону."
-  };
-
-  const technologyStackTopic = {
-    title: "Стек технологий",
-    content:
-      "Было решено взять за основу клиент-серверную архитектуру. Клиентское приложение было написано на HTML, CSS, JS с помощью фреймворков React и Bootstrap, библиотеки Chart.js. Серверная часть была написана на C# с помощью фреймворка ASP.NET CORE и библиотек Math.NET Numerics."
-  };
-
-  const authorsOfTheWorkTopic = {
-    title: "Авторы работы",
-    content: (
-      <p>
-        Мартиросян Г.А. - руководитель проекта, специалист по работе с документами
-        <br />
-        Родионов Г.А. - главный разработчик
-        <br />
-        Беспалов Д.С. - тестировщик, помощник по работе с документами
-        <br />
-        Фролов А.П. - помощник по работе с документами
-      </p>
-    )
+    title: "Проверка гипотезы о нормальном распределении",
+    content: <p>Рекомендуем для начала ознакомиться с <a className="text-light" href="/userManual">руководством пользования</a>,а затем вы можете <a className="text-light" href="/normalDestribution">приступить к работе</a></p>
   };
 
   return (
-    <div
-      className="container text-light d-flex flex-column justify-content-center"
-      style={{ marginTop: "100px" }}
-    >
-      <MainBlock topic={coursWorkTopic} />
-      <MainBlock topic={technologyStackTopic} />
-      <MainBlock topic={authorsOfTheWorkTopic} />
+    <div className="container text-light d-flex flex-column justify-content-center">
+      <MainBlock className="position-absolute top-50 start-50 translate-middle" topic={coursWorkTopic} />
     </div>
   );
 };

@@ -2,6 +2,7 @@
 using NDHTAPI.Models;
 using System.Text.Json.Serialization;
 using System.Text.Json;
+using NDHTAPI.DocFiles;
 
 namespace NDHTAPI.Controllers
 {
@@ -20,6 +21,10 @@ namespace NDHTAPI.Controllers
             var populationOfTheData = await PopulationOfData.CreatePopulationOfData(start, end, intervalsFrequency, probability);
 
             var result = await NormalDestribution.ValidationNormalDestribution.PopulationOfTheDataIsValid(populationOfTheData.PirsonsValuesSum, populationOfTheData.PirsonsMean);
+
+            Doc doc = new();
+
+            doc.CreateNewDoc();
 
             return Results.Ok(new Response(populationOfTheData, result));
         }

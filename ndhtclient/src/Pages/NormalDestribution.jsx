@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Result from "../Components/Result";
+import Result from "../Components/UI/Result/Result";
 import html2pdf from "html2pdf.js/dist/html2pdf.min";
 import domtoimage from "dom-to-image";
 import html2canvas from "html2canvas";
@@ -51,7 +51,7 @@ const NormalDestribution = () => {
             aria-label="Default select example"
             onChange={(event) => setProbability(event.target.value)}
           >
-            <option defaultValue disabled>
+            <option selected defaultValue disabled>
               Выберете уровень значимости
             </option>
             <option value="0.01">0.01</option>

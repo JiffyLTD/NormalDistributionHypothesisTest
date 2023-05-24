@@ -68,3 +68,10 @@ D:\УЧЕБА\3КУРС\6СЕМЕСТР\ИС\NormalDistributionHypothesisTest\ND
 D:\УЧЕБА\3КУРС\6СЕМЕСТР\ИС\NormalDistributionHypothesisTest\NDHTAPI\obj\Debug\net7.0\NDHTAPI.pdb
 D:\УЧЕБА\3КУРС\6СЕМЕСТР\ИС\NormalDistributionHypothesisTest\NDHTAPI\obj\Debug\net7.0\NDHTAPI.genruntimeconfig.cache
 D:\УЧЕБА\3КУРС\6СЕМЕСТР\ИС\NormalDistributionHypothesisTest\NDHTAPI\obj\Debug\net7.0\ref\NDHTAPI.dll
+D:\УЧЕБА\3КУРС\6СЕМЕСТР\ИС\NormalDistributionHypothesisTest\NDHTAPI\bin\Debug\net7.0\Aspose.Words.Pdf2Word.dll
+D:\УЧЕБА\3КУРС\6СЕМЕСТР\ИС\NormalDistributionHypothesisTest\NDHTAPI\bin\Debug\net7.0\Aspose.Words.dll
+D:\УЧЕБА\3КУРС\6СЕМЕСТР\ИС\NormalDistributionHypothesisTest\NDHTAPI\bin\Debug\net7.0\SkiaSharp.dll
+D:\УЧЕБА\3КУРС\6СЕМЕСТР\ИС\NormalDistributionHypothesisTest\NDHTAPI\bin\Debug\net7.0\runtimes\osx\native\libSkiaSharp.dylib
+D:\УЧЕБА\3КУРС\6СЕМЕСТР\ИС\NormalDistributionHypothesisTest\NDHTAPI\bin\Debug\net7.0\runtimes\win-arm64\native\libSkiaSharp.dll
+D:\УЧЕБА\3КУРС\6СЕМЕСТР\ИС\NormalDistributionHypothesisTest\NDHTAPI\bin\Debug\net7.0\runtimes\win-x64\native\libSkiaSharp.dll
+D:\УЧЕБА\3КУРС\6СЕМЕСТР\ИС\NormalDistributionHypothesisTest\NDHTAPI\bin\Debug\net7.0\runtimes\win-x86\native\libSkiaSharp.dll

@@ -1,12 +1,13 @@
 ﻿using Aspose.Words;
 using Aspose.Words.Tables;
 using NDHTAPI.DocumentsFiles;
+using NDHTAPI.Models;
 
 namespace NDHTAPI.DocFiles
 {
     public class Doc
     {
-        public async void CreateNewDoc()
+        public async void CreateNewDoc(PopulationOfData data)
         {
             Document doc = new();
 
@@ -18,26 +19,28 @@ namespace NDHTAPI.DocFiles
             builder.Bold = false;
             builder.Font.Size = 14;
 
-            builder.InsertParagraph();
+            CreateEnter(builder, 2);
 
-            CreateRows(builder);
+            CreateEnterDataTable(builder, data);// создаем таблицу входных данных
+            CreateEnter(builder, 1);
+            CreateResultDataTable(builder, data);// создаем таблицу вычисляемых данных
 
             doc.Save("ResultDocuments\\ПроверкаГипотезыНормальногоРаспределения.docx");
         }
 
-        public async void CreateEnter(DocumentBuilder builder, int count)
+        private static void CreateEnter(DocumentBuilder builder, int count)
         {
             for (int i = 0; i < count; i++)
             {
-
+                builder.InsertParagraph();
             }
         }
 
-        public async void CreateRows(DocumentBuilder builder)
+        private static void CreateEnterDataTable(DocumentBuilder builder, PopulationOfData data)
         {
             builder.Write("Таблица 1 - Входные данные");
             builder.StartTable();
-            
+
             // шапка
             for (int i = 0; i < 6; i++)
             {
@@ -50,13 +53,15 @@ namespace NDHTAPI.DocFiles
             for (int i = 0; i < 6; i++)
             {
                 builder.InsertCell();
+                builder.Write(data.StartIntervals[i].ToString());
             }
 
             builder.EndRow();
             builder.EndTable();
+        }
 
-            builder.InsertParagraph();
-
+        private static void CreateResultDataTable(DocumentBuilder builder, PopulationOfData data)
+        {
             builder.Write("Таблица 2 - Вычисляемые данные");
             builder.StartTable();
             

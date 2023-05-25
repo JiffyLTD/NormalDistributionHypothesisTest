@@ -24,7 +24,7 @@ namespace NDHTAPI.Controllers
 
             Doc doc = new();
 
-            doc.CreateNewDoc();
+            doc.CreateNewDoc(populationOfTheData);
 
             return Results.Ok(new Response(populationOfTheData, result));
         }

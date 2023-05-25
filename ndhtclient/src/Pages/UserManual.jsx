@@ -1,9 +1,41 @@
 import React from "react";
-import TableResultExample from "../Components/UI/TableResultExample/TableResultExample";
-import ChartExample from '../Components/UI/ChartExample/ChartExample';
+import TableEnterData from "../Components/UI/TableEnterData/TableEnterData";
+import TableResultData1 from "../Components/UI/TableResultData/TableResultData1";
+import TableResultData2 from "../Components/UI/TableResultData/TableResultData2";
+import { Col, Row } from "react-bootstrap";
+import ChartResult from "../Components/UI/ChartResult/ChartResult";
 
 const UserManual = () => {
   document.title = "Руководство пользования";
+
+  function getRandomArbitrary(min, max) {
+    return (Math.random() * (max - min) + min) / 10;
+  }
+
+  const enterData = {
+    startIntervals: [7.5, 10.5, 13.5],
+    endIntervals: [10.5, 13.5, 16.5],
+    frequencyIntervals: [2, 5, 1],
+    probability: 0.05,
+  };
+  const resultData1 = {
+    middleIntervals: [9, 12, 15],
+    sampleMeans: [18, 72, 150],
+    standartDeviations: [162, 864, 2250],
+    standartizeValues: [-2.23, -1.68, -1.14],
+    standartNormalDestribution: [0.03, 0.10, 0.21],
+    theoreticalFrequencies: [1.81, 5.31, 2.19],
+    pirsonsValues: [0.02, 0.09, 0.19],
+  };
+  const resultData2 = {
+    intervalsFrequencySum: 9,
+    partialIntervalLength: 3,
+    sampleMean: 21.21,
+    standartDeviation: 5.47,
+    pirsonsValuesSum: 12.59,
+    pirsonsMean: 14.01,
+    degreesOfFreedom: resultData1.theoreticalFrequencies.length - 2 - 1,
+  };
 
   return (
     <div className="border rounded bg-white container">
@@ -61,33 +93,51 @@ const UserManual = () => {
       <div className="mt-2">
         <h3>4. Получить результаты обработки данных.</h3>
         <p className="ms-5 fs-5">
-        <span className="fw-bold">Результаты выводятся в виде таблицы и графика</span><br />
-        <span className="fw-bold">Таблица</span>
-          <TableResultExample />
-         <span className="fw-bold">Где входные данные :</span> <br />
+          <span className="fw-bold">
+            Результаты выводятся в виде таблиц и графика
+          </span>
+          <br />
+          <span className="fw-bold">Примеры таблиц</span>
+          <Row>
+            <Col>
+              <TableEnterData enterData={enterData} />
+            </Col>
+            <Col>
+              <TableResultData1 resultData1={resultData1} />
+            </Col>
+          </Row>
+          <TableResultData2 resultData2={resultData2} />
+          <span className="fw-bold">Где входные данные :</span> <br />
+          Начало интервала <br />
+          Конец интервала <br />n <sub>i</sub> - частоты выборки <br />
+          α- уровень значимости <br />
+          <span className="fw-bold">Где вычисляемые данные :</span><br />
           h - длина частичного интервала <br />
           n - объем выборки <br />
-          n <sub>i</sub> - частоты выборки <br />
-          α- уровень значимости <br />
-          <span className="fw-bold">Где вычисляемые данные :</span> <br />
-          x <sub>i</sub> - середины интервалов <br />
-          x<sub>i</sub>n<sub>i</sub> - данные необходимые для вычисления выборочной средней<br />
-          x<sub>i</sub><sup>2</sup> n<sub>i</sub> - данные необходимые для вычисления среднего квадратичного отклонения <br />
-          z<sub>i</sub> - стандартизированные значения x<sub>i</sub><br />
+          x <sub>i</sub> - середины интервалов <br />x<sub>i</sub>n
+          <sub>i</sub> - данные необходимые для вычисления выборочной средней
+          <br />x<sub>i</sub>
+          <sup>2</sup> n<sub>i</sub> - данные необходимые для вычисления
+          среднего квадратичного отклонения <br />z<sub>i</sub> -
+          стандартизированные значения x<sub>i</sub>
+          <br />
           f(
           <sub>
             z<sub>i</sub>
           </sub>
-          ) - значение функции плотности стандартного нормального распределения<br />
-          n<sub>i</sub>
-          <sup>t</sup> - теоритические частоты<br />
-          x̅ - выборочная средняя<br />
-          &#x3C3; <sub>e</sub> - среднее квадратное отклонение <br />
-          x <sup>2</sup> <sub>крит</sub> - критическое значение распределения<br /> 
-          x <sup>2</sup> <sub>набл</sub> - критерий согласия Пирсона <br />
+          ) - значение функции плотности стандартного нормального распределения
+          <br />n<sub>i</sub>
+          <sup>t</sup> - теоритические частоты
+          <br />
+          x̅ - выборочная средняя
+          <br />
+          &#x3C3; <sub>e</sub> - среднее квадратное отклонение <br />x{" "}
+          <sup>2</sup> <sub>крит</sub> - критическое значение распределения
+          <br />x <sup>2</sup> <sub>набл</sub> - критерий согласия Пирсона{" "}
+          <br />
           k - количество степеней свободы <br />
           <span className="fw-bold">График</span> <br />
-          <ChartExample/>
+          <ChartResult dataBar={enterData} dataLine={resultData1}/>
           <span className="text-muted">Пример графика</span>
         </p>
       </div>
@@ -99,9 +149,7 @@ const UserManual = () => {
           <button type="button" className="btn btn-danger">
             Сохранить в .pdf
           </button>
-          &nbsp;
-          или 
-          &nbsp;
+          &nbsp; или &nbsp;
           <button type="button" className="btn btn-primary">
             Сохранить в .doc
           </button>

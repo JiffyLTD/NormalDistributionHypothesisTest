@@ -7,7 +7,7 @@ namespace NDHTAPI.DocFiles
 {
     public class Doc
     {
-        public async void CreateNewDoc(PopulationOfData data)
+        public void CreateNewDoc(PopulationOfData data)
         {
             Document doc = new();
 

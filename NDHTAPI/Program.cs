@@ -39,5 +39,12 @@ app.UseStaticFiles(
         Path.Combine(Directory.GetCurrentDirectory(), "TestCsv")),
         RequestPath = "/TestCsv"
     });
+app.UseStaticFiles(
+    new StaticFileOptions
+    {
+        FileProvider = new PhysicalFileProvider(
+        Path.Combine(Directory.GetCurrentDirectory(), "ResultDocuments")),
+        RequestPath = "/ResultDocuments"
+    });
 
 app.Run();

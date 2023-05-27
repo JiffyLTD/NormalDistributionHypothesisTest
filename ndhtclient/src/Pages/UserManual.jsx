@@ -8,36 +8,32 @@ import ChartResult from "../Components/UI/ChartResult/ChartResult";
 const UserManual = () => {
   document.title = "Руководство пользования";
 
-  const csvNeNormal = "https://localhost:7117/TestCsv/testDataCSVNeNormal.csv";
-  const csvNormal = "https://localhost:7117/TestCsv/testDataCSVNormal.csv";
-
-  function getRandomArbitrary(min, max) {
-    return (Math.random() * (max - min) + min) / 10;
-  }
+  const csvNeNormalHref = "https://localhost:7117/TestCsv/testDataCSVNeNormal.csv";
+  const csvNormalHref = "https://localhost:7117/TestCsv/testDataCSVNormal.csv";
 
   const enterData = {
-    startIntervals: [7.5, 10.5, 13.5],
-    endIntervals: [10.5, 13.5, 16.5],
-    frequencyIntervals: [2, 5, 1],
+    startIntervals: [800, 810, 820, 830, 840, 850, 860, 870, 880, 890],
+    endIntervals: [810, 820, 830, 840, 850, 860, 870, 880, 890, 900],
+    frequencyIntervals: [2, 6, 3, 6, 11, 5, 6, 4, 3, 4],
     probability: 0.05,
   };
   const resultData1 = {
-    middleIntervals: [9, 12, 15],
-    sampleMeans: [18, 72, 150],
-    standartDeviations: [162, 864, 2250],
-    standartizeValues: [-2.23, -1.68, -1.14],
-    standartNormalDestribution: [0.03, 0.10, 0.21],
-    theoreticalFrequencies: [1.81, 5.31, 2.19],
-    pirsonsValues: [0.02, 0.09, 0.19],
+    middleIntervals: [805, 815, 825, 835, 845, 855, 865, 875, 885, 895],
+    sampleMeans: [1610, 4890, 2475, 5010, 9295, 4275, 5190, 3500, 2655, 3580],
+    standartDeviations: [1296050, 3985350, 2041875, 4183350	, 7854275, 3655125, 4489350, 3062500, 2349675, 3204100],
+    standartizeValues: [-1.80,-1.40 , -0.99	,-0.59 , -0.19, 0.22, 0.62, 1.03, 1.43, 1.83],
+    standartNormalDestribution: [0.08, 0.15, 0.24,0.34 ,0.39 ,0.39 ,0.33 ,0.24 ,0.14,0.07],
+    theoreticalFrequencies: [ 1.59, 3.03, 4.92, 6.77, 7.92, 7.87, 6.64, 4.76, 2.90, 1.50],
+    pirsonsValues: [0.11,2.90 ,0.75 ,0.09 ,1.20 ,1.05, 0.06, 0.12,0.00 ,4.17],
   };
   const resultData2 = {
-    intervalsFrequencySum: 9,
-    partialIntervalLength: 3,
-    sampleMean: 21.21,
-    standartDeviation: 5.47,
-    pirsonsValuesSum: 12.59,
-    pirsonsMean: 14.01,
-    degreesOfFreedom: resultData1.theoreticalFrequencies.length - 2 - 1,
+    intervalsFrequencySum: 50,
+    partialIntervalLength: 10	,
+    sampleMean: 849.60,
+    standartDeviation: 24.76,
+    pirsonsValuesSum: 10.44,
+    pirsonsMean: 14.07,
+    degreesOfFreedom: 7,
   };
   const labels = ['800-810', '810-820', '820-830', '830-840', '840-850', '850-860', '860-870', '870-880', '880-890', '890-900'];
 
@@ -155,6 +151,8 @@ const UserManual = () => {
             Результаты выводятся в виде таблиц и графика
           </span>
           <br />
+          <span className="text-muted">Пример нормального распределения</span>
+          <br />
           <span className="fw-bold">Примеры таблиц</span>
           <Row>
             <Col>
@@ -218,13 +216,13 @@ const UserManual = () => {
         <p className="ms-5 fs-5">
           Вы можете скачать тестовые данные и перейти на вкладку 'Приступить к работе', ввести все настройки из данного примера и убедиться в работоспособности программы.
           <br />
-          <a href={csvNormal}>
+          <a href={csvNormalHref} target="_blank">
           <button type="button" className="btn btn-success mt-2">
             Скачать тестовую выборку нормального распределения в формате .csv
           </button>
           </a>
           <br />
-          <a href={csvNeNormal}>
+          <a href={csvNeNormalHref} target="_blank">
           <button type="button" className="btn btn-success mt-2">
             Скачать тестовую выборку не нормального распределения в формате .csv
           </button>

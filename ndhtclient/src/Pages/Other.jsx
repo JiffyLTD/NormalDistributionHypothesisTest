@@ -5,7 +5,7 @@ const Other = () => {
   const technologyStackTopic = {
     title: "Стек технологий",
     content:
-      "Было решено взять за основу клиент-серверную архитектуру. Клиентское приложение было написано на HTML, CSS, JS с помощью фреймворков React и Bootstrap, библиотеки Chart.js. Серверная часть была написана на C# с помощью фреймворка ASP.NET CORE и библиотек Math.NET Numerics.",
+      "Было решено взять за основу клиент-серверную архитектуру. Клиентское приложение было написано на HTML, CSS, JS с помощью фреймворков React и Bootstrap, библиотеки Chart.js. Серверная часть была написана на C# с помощью фреймворка ASP.NET CORE и библиотек Math.NET Numerics, Aspose.Words.",
   };
 
   const authorsOfTheWorkTopic = {

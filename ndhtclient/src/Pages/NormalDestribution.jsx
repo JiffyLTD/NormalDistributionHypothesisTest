@@ -9,6 +9,9 @@ import IntervalsInputBlock from "../Components/IntervalsInputBlock/IntervalsInpu
 const NormalDestribution = () => {
   document.title = "Приступить к работе";
 
+  const docHref = "https://localhost:7117/TestCsv/testDataCSVNeNormal.csv";
+  const pdfHref = "https://localhost:7117/TestCsv/testDataCSVNormal.csv";
+
   const [labels, setLabels] = useState([]);
   const [start, setStart] = useState(0);
   const [end, setEnd] = useState(0);
@@ -143,13 +146,17 @@ const NormalDestribution = () => {
       </div>
       {resultIsReady ? (
         <div className="mb-2">
+          <a href={pdfHref} target="_blank">
           <button type="button" className="btn btn-danger">
             Сохранить в .pdf
           </button>
+          </a>
           &nbsp; или &nbsp;
+          <a href={docHref} target="_blank">
           <button type="button" className="btn btn-primary">
             Сохранить в .doc
           </button>
+          </a>
           <button
             type="button"
             className="ms-5 btn btn-warning"

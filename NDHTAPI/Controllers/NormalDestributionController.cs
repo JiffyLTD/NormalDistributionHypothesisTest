@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NDHTAPI.Data;
 using NDHTAPI.DobuleParseHand;
+using NDHTAPI.DocFiles;
 using NDHTAPI.Models;
 using NDHTAPI.NormalDestribution;
-using System.Globalization;
 
 namespace NDHTAPI.Controllers
 {
@@ -36,9 +36,7 @@ namespace NDHTAPI.Controllers
 
             var result = await ValidationNormalDestribution.PopulationOfTheDataIsValid(populationOfTheData.PirsonsValuesSum, populationOfTheData.PirsonsMean);
 
-            // Doc doc = new();
-
-            // doc.CreateNewDoc(populationOfTheData);
+            Doc.CreateNewDoc(populationOfTheData, valuesFromFront.probability, result);
 
             return Results.Ok(new Response(populationOfTheData, result));
         }

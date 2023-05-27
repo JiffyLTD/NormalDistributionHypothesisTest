@@ -59,7 +59,7 @@ const ChartResult = ({ dataBar, dataLine, labels }) => {
     <Row className="w-100 h-50">
       <Col sm="1"></Col>
       <Col sm="10">
-        <Chart data={data} options={options} />
+        <Chart id="chart-result" data={data} options={options} />
       </Col>
       <Col sm="1"></Col>
     </Row>

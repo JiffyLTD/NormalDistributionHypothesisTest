@@ -7,7 +7,7 @@
             List<double> startIntervals = new();
             List<double> endIntervals = new();
 
-            for(double i = start;i < end;)
+            for (double i = start; i < end;)
             {
                 startIntervals.Add(i);
                 i += step;
@@ -32,8 +32,16 @@
 
                 for (int j = 0; j < weigth.Length; j++)
                 {
-                    if (startIntervals[i] < weigth[j] && weigth[j] <= endIntervals[i]) // если старт интервала <= вес <= конец интервала
-                        count++;
+                    if (i == startIntervals.Length - 1)
+                    {
+                        if (startIntervals[i] < weigth[j] && weigth[j] <= endIntervals[i]) 
+                            count++;
+                    }
+                    else
+                    {
+                        if (startIntervals[i] <= weigth[j] && weigth[j] < endIntervals[i]) 
+                            count++;
+                    }
                 }
 
                 intervalsFrequency.Add(count);

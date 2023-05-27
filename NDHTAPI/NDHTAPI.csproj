@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Aspose.Cells" Version="23.5.0" />
     <PackageReference Include="Aspose.Words" Version="23.5.0" />
     <PackageReference Include="MathNet.Numerics" Version="5.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.5" />
@@ -16,6 +17,7 @@
 
   <ItemGroup>
     <Folder Include="ResultDocuments\" />
+    <Folder Include="ChartPNG\" />
   </ItemGroup>
 
 </Project>

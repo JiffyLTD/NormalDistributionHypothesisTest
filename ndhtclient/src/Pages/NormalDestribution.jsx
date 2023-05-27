@@ -5,12 +5,13 @@ import { InfinitySpin } from "react-loader-spinner";
 import FileInputBlock from "../Components/FileInputBlock/FileInputBlock";
 import ProbabilityInputBlock from "../Components/ProbabilityInputBlock/ProbabilityInputBlock";
 import IntervalsInputBlock from "../Components/IntervalsInputBlock/IntervalsInputBlock";
+import { html2canvas } from 'html2canvas';
 
 const NormalDestribution = () => {
   document.title = "Приступить к работе";
 
-  const docHref = "https://localhost:7117/TestCsv/testDataCSVNeNormal.csv";
-  const pdfHref = "https://localhost:7117/TestCsv/testDataCSVNormal.csv";
+  const docHref = "https://localhost:7117/ResultDocuments/NDHT.docx";
+  const pdfHref = "https://localhost:7117/ResultDocuments/NDHT.pdf";
 
   const [labels, setLabels] = useState([]);
   const [start, setStart] = useState(0);

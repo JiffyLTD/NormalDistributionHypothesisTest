@@ -41,6 +41,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Aspose.Cells": {
+              "target": "Package",
+              "version": "[23.5.0, )"
+            },
             "Aspose.Words": {
               "target": "Package",
               "version": "[23.5.0, )"

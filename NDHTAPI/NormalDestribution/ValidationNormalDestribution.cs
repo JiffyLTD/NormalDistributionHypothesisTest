@@ -10,7 +10,7 @@
         /// <returns>Принятия или отвержения гипотезы о нормальном распределении</returns>
         public static Task<string> PopulationOfTheDataIsValid(double observablePirson, double critPirson)
         {
-            return observablePirson < critPirson ? Task.FromResult("Генеральная совокупность распределена нормально") : Task.FromResult("Генеральная совокупность распределена не нормально");
+            return observablePirson < critPirson ? Task.FromResult("генеральная совокупность распределена нормально") : Task.FromResult("генеральная совокупность распределена не нормально");
         }
     }
 }

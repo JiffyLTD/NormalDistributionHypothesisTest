@@ -1,13 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Result from "../Components/UI/Result/Result";
 import ServiceAPI from "../API/ServiceAPI";
 import { InfinitySpin } from "react-loader-spinner";
+import FileInputBlock from "../Components/FileInputBlock/FileInputBlock";
+import ProbabilityInputBlock from "../Components/ProbabilityInputBlock/ProbabilityInputBlock";
+import IntervalsInputBlock from "../Components/IntervalsInputBlock/IntervalsInputBlock";
 
 const NormalDestribution = () => {
   document.title = "Приступить к работе";
 
+  const [labels, setLabels] = useState([]);
+  const [start, setStart] = useState(0);
+  const [end, setEnd] = useState(0);
+  const [step, setStep] = useState(0);
   const [probability, setProbability] = useState(0);
   const [selectedFile, setSelectedFile] = useState(null);
+  const [formIsValid, setFormIsValid] = useState(true);
   const [isLoad, setIsLoad] = useState(false);
   const [resultIsReady, setResultIsReady] = useState(false);
   const [error, setError] = useState("");
@@ -15,7 +23,7 @@ const NormalDestribution = () => {
     startIntervals: [],
     endIntervals: [],
     frequencyIntervals: [],
-    probability: 0
+    probability: 0,
   });
   const [resultData1, setResultData1] = useState({
     middleIntervals: [0, 0],
@@ -24,7 +32,7 @@ const NormalDestribution = () => {
     standartizeValues: [0, 0],
     standartNormalDestribution: [0, 0],
     theoreticalFrequencies: [0, 0],
-    pirsonsValues: [0, 0]
+    pirsonsValues: [0, 0],
   });
   const [resultData2, setResultData2] = useState({
     intervalsFrequencySum: 0,
@@ -33,83 +41,103 @@ const NormalDestribution = () => {
     standartDeviation: 0,
     pirsonsValuesSum: 0,
     pirsonsMean: 0,
-    degreesOfFreedom: 0
+    degreesOfFreedom: 0,
   });
-  const [resultMessage, setResultMessage] = useState('');
+  const [resultMessage, setResultMessage] = useState("");
 
-  const formValidation = () => {
-    return probability === 0 || selectedFile === null;
-  };
+  useEffect(() => {
+    if (probability && selectedFile && step && start && end) {
+      setFormIsValid(false);
+    }
+  }, [probability, selectedFile, step, start, end]);
+
+  useEffect(() => {
+    if(labels && enterData && resultData1 && resultData2 && resultMessage){
+      setResultIsReady(true);
+    }
+  }, [labels, enterData, resultData1, resultData2, resultMessage])
 
   const uploadData = async () => {
     setResultIsReady(false);
     setError("");
     setIsLoad(true);
+    const formData = new FormData();
+    formData.append("file", selectedFile);
+    formData.append("probability", probability);
+    formData.append("start", start);
+    formData.append("end", end);
+    formData.append("step", step);
+
     try {
-      let result = await ServiceAPI.NormalDestribution();
+      let result = await ServiceAPI.NormalDestribution(formData);
 
-      let resultData = result.data.populationOfData;
-
-      setEnterData({startIntervals : resultData.startIntervals, endIntervals : resultData.endIntervals, frequencyIntervals : resultData.intervalsFrequency, probability : 0.05});
-      setResultData1({middleIntervals : resultData.middleIntervals,  sampleMeans : resultData.sampleMeans, 
-        standartDeviations : resultData.standartDeviations, standartizeValues : resultData.standartizeValues,
-        standartNormalDestribution :  resultData.standartNormalDestribution, theoreticalFrequencies : resultData.theoreticalFrequencies,
-        pirsonsValues : resultData.pirsonsValues});
-      setResultData2({intervalsFrequencySum : resultData.intervalsFrequencySum, partialIntervalLength : resultData.partialIntervalLength,
-        sampleMean : resultData.sampleMean, standartDeviation : resultData.standartDeviation,
-        pirsonsValuesSum : resultData.pirsonsValuesSum, pirsonsMean : resultData.pirsonsMean,
-        degreesOfFreedom : resultData1.theoreticalFrequencies.length - 3});
-      setResultMessage(result.data.message);
-
-      setResultIsReady(true);
-    } catch (error) {
-      setError("Ошибка соединения. Попробуйте позже.");
+      if (result.status === 200) {
+        let resultData = result.data.populationOfData;
+        let labels = [];
+        for(let i = 0; i < resultData.startIntervals.length; i++){
+          labels[i] = `${resultData.startIntervals[i]} - ${resultData.endIntervals[i]}`;
+        }
+        setLabels(labels);
+        setEnterData({
+          startIntervals: resultData.startIntervals,
+          endIntervals: resultData.endIntervals,
+          frequencyIntervals: resultData.intervalsFrequency,
+          probability: probability,
+        });
+        setResultData1({
+          middleIntervals: resultData.middleIntervals,
+          sampleMeans: resultData.sampleMeans,
+          standartDeviations: resultData.standartDeviations,
+          standartizeValues: resultData.standartizeValues,
+          standartNormalDestribution: resultData.standartNormalDestribution,
+          theoreticalFrequencies: resultData.theoreticalFrequencies,
+          pirsonsValues: resultData.pirsonsValues,
+        });
+        setResultData2({
+          intervalsFrequencySum: resultData.intervalsFrequencySum,
+          partialIntervalLength: resultData.partialIntervalLength,
+          sampleMean: resultData.sampleMean,
+          standartDeviation: resultData.standartDeviation,
+          pirsonsValuesSum: resultData.pirsonsValuesSum,
+          pirsonsMean: resultData.pirsonsMean,
+          degreesOfFreedom: resultData.degreesOfFreedom,
+        });
+        setResultMessage(result.data.message);
+      } else {
+        setError(result.data.value);
+      }
+    } catch {
+      setError("Ошибка сети. Попробуйте позже.");
     }
     setIsLoad(false);
+  };
+
+  const clearResult = () => {
+    setResultIsReady(false);
   };
 
   return (
     <div className="border rounded bg-white container">
       <div className="mt-5 mb-5 ms-5">
-        <div>
-          <h3>1. Загрузка данных.</h3>
-          <div className="mb-3">
-            <label htmlFor="formFileSm" className="form-label">
-              Файл должен быть формата .csv
-            </label>
-            <input
-              className="form-control form-control-sm w-25"
-              id="formFileSm"
-              type="file"
-              onChange={(event) => setSelectedFile(event.target.files)}
-            />
-          </div>
-        </div>
-        <div>
-          <h3>2. Выбор уровня значимости.</h3>
-          <select
-            className="form-select-sm w-25"
-            aria-label="Default select example"
-            onChange={(event) => setProbability(event.target.value)}
-          >
-            <option selected defaultValue disabled>
-              Выберете уровень значимости
-            </option>
-            <option value="0.01">0.01</option>
-            <option value="0.05">0.05</option>
-            <option value="0.1">0.1</option>
-          </select>
-        </div>
+        <FileInputBlock setSelectedFile={setSelectedFile}/>
+        <ProbabilityInputBlock setProbability={setProbability}/>
+        <IntervalsInputBlock setStart={setStart} setEnd={setEnd} setStep={setStep} start={start}/>
         <button
           type="button"
           className="btn btn-primary mt-3 mb-2"
-          disabled={false}
+          disabled={formIsValid}
           onClick={uploadData}
         >
           Загрузить данные
         </button>
         <div className="text-center">
-          {isLoad ? <InfinitySpin color="blue" /> : ""}
+          {isLoad ? (
+            <div>
+              <InfinitySpin color="blue" /> <p>Идет загрузка...</p>
+            </div>
+          ) : (
+            ""
+          )}
           <span className="text-danger">{error}</span>
         </div>
       </div>
@@ -122,7 +150,20 @@ const NormalDestribution = () => {
           <button type="button" className="btn btn-primary">
             Сохранить в .doc
           </button>
-          <Result enterData={enterData} resultData1={resultData1} resultData2={resultData2} resultMessage={resultMessage}/>
+          <button
+            type="button"
+            className="ms-5 btn btn-warning"
+            onClick={clearResult}
+          >
+            Очистить результаты
+          </button>
+          <Result
+            enterData={enterData}
+            resultData1={resultData1}
+            resultData2={resultData2}
+            resultMessage={resultMessage}
+            labels = {labels}
+          />
         </div>
       ) : (
         <div></div>

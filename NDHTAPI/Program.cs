@@ -1,5 +1,6 @@
 using System.Text.Json.Serialization;
 using System.Text.Json;
+using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,5 +31,13 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.UseCors(options => options.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod());
+
+app.UseStaticFiles(
+    new StaticFileOptions
+    {
+        FileProvider = new PhysicalFileProvider(
+        Path.Combine(Directory.GetCurrentDirectory(), "TestCsv")),
+        RequestPath = "/TestCsv"
+    });
 
 app.Run();

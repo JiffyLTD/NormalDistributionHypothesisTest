@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using NDHTAPI.Data;
+using NDHTAPI.DobuleParseHand;
 using NDHTAPI.Models;
-using System.Text.Json.Serialization;
-using System.Text.Json;
-using NDHTAPI.DocFiles;
+using NDHTAPI.NormalDestribution;
+using System.Globalization;
 
 namespace NDHTAPI.Controllers
 {
@@ -10,21 +11,34 @@ namespace NDHTAPI.Controllers
     [ApiController]
     public class NormalDestributionController : ControllerBase
     {
-        [HttpGet]
-        public async Task<IResult> Get()
+        [HttpPost]
+        public async Task<IResult> Post()
         {
-            var start = new double[9] { 7.5, 10.5, 13.5, 16.5, 19.5, 22.5, 25.5, 28.5, 31.5 };
-            var end = new double[9] { 10.5, 13.5, 16.5, 19.5, 22.5, 25.5, 28.5, 31.5, 34.5 };
-            var intervalsFrequency = new double[9] { 2, 6, 10, 17, 22, 11, 9, 7, 5 };
-            var probability = 0.05;
+            var httpRequest = Request.Form;
+            var file = httpRequest.Files[0];
+            var probabilityFromFront = httpRequest["probability"];
+            var startFromFront = httpRequest["start"];
+            var endFromFront = httpRequest["end"];
+            var stepFromFront = httpRequest["step"];
 
-            var populationOfTheData = await PopulationOfData.CreatePopulationOfData(start, end, intervalsFrequency, probability);
+            var valuesFromFront = DoubleParse.DoubleParseValues(probabilityFromFront, startFromFront, endFromFront, stepFromFront);
 
-            var result = await NormalDestribution.ValidationNormalDestribution.PopulationOfTheDataIsValid(populationOfTheData.PirsonsValuesSum, populationOfTheData.PirsonsMean);
+            var intervals = Intervals.GetIntervals(valuesFromFront.start, valuesFromFront.end, valuesFromFront.step);
 
-            Doc doc = new();
+            var weightFromFile = await FromCsvFile.Read(file);
 
-            doc.CreateNewDoc(populationOfTheData);
+            if (!weightFromFile.result)
+                return Results.BadRequest("Ошибка чтения файла, проверьте его содержимое.");
+
+            var intervalsFrequencyFiltred = Intervals.GetIntervalsFrequency(weightFromFile.weight, intervals.startIntervals, intervals.endIntervals);
+
+            var populationOfTheData = await PopulationOfData.CreatePopulationOfData(intervals.startIntervals, intervals.endIntervals, intervalsFrequencyFiltred, valuesFromFront.probability);
+
+            var result = await ValidationNormalDestribution.PopulationOfTheDataIsValid(populationOfTheData.PirsonsValuesSum, populationOfTheData.PirsonsMean);
+
+            // Doc doc = new();
+
+            // doc.CreateNewDoc(populationOfTheData);
 
             return Results.Ok(new Response(populationOfTheData, result));
         }

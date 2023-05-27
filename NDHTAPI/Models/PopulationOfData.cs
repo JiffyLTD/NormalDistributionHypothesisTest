@@ -56,6 +56,8 @@
             var pirsonMean = await Goodness.ChiInv(probability, degreesOfFreedom);
             pop.PirsonsMean = pirsonMean;
 
+            pop.DegreesOfFreedom = degreesOfFreedom;
+
             return pop;
         }
 
@@ -137,5 +139,10 @@
         /// Критическое значение
         /// </summary>
         public double PirsonsMean { get; private set; }
+
+        /// <summary>
+        /// Число степеней свободы
+        /// </summary>
+        public int DegreesOfFreedom { get; private set; }
     }
 }

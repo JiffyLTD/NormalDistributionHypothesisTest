@@ -200,6 +200,18 @@ namespace NDHTAPI.DocFiles
             // Задаем цвет второй серии диаграммы
             chart.NSeries[1].Border.Color = Color.Indigo;
 
+            // Получить ссылку на ось X
+            Axis xAxis = chart.CategoryAxis;
+
+            // Получить ссылку на ось Y
+            Axis yAxis = chart.ValueAxis;
+
+            // Установить подпись для оси X
+            xAxis.Title.Text = "Интервалы выборки, гр.";
+
+            // Установить подпись для оси Y
+            yAxis.Title.Text = "Количество, шт.";
+
             chart.NSeries[0].Name = "Гистограмма распределения генеральной совокупности";
             chart.NSeries[1].Name = "График нормального распределения";
 

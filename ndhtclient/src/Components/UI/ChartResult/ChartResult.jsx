@@ -33,33 +33,43 @@ const ChartResult = ({ dataBar, dataLine, labels }) => {
         borderColor: "indigo",
         borderWidth: 4,
         data: dataLine.theoreticalFrequencies,
-        lineTension: 0.4,
+        lineTension: 0.4
       },
       {
         type: "bar",
         label: "Гистограмма распределения генеральной совокупности",
         backgroundColor: "MediumVioletRed",
-        data: dataBar.frequencyIntervals,
+        data: dataBar.frequencyIntervals
       },
     ],
   };
-  var options = {
-    responsive: true, // Автоматически подстраивать размер графика под элемент холста
+  const options = {
     scales: {
-      yAxes: [
-        {
-          ticks: {
-            beginAtZero: true, // Начинать ось y с нуля
-          },
+      y: {
+        grid: {
+          display: false,
         },
-      ],
-    },
-  };
+        title: {
+          display: true,
+          text: 'Количество, шт.',
+        },
+      },
+      x: {
+        grid: {
+          display: false,
+        },
+        title: {
+          display: true,
+          text: 'Интервалы выборки, гр.',
+        },
+      },
+    }
+  }
   return (
-    <Row className="w-100 h-50">
+    <Row className="w-100 h-100">
       <Col sm="1"></Col>
       <Col sm="10">
-        <Chart id="chart-result" data={data} options={options} />
+        <Chart id="chart-result" data={data} options={options}/>
       </Col>
       <Col sm="1"></Col>
     </Row>

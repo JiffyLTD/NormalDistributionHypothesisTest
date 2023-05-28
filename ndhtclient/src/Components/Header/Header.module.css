@@ -1,0 +1,11 @@
+.link {
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    color: white;
+    margin-left: 30px;
+  }
+  
+  .link:hover {
+    border-bottom: 2px solid white;
+    color: white;
+  }

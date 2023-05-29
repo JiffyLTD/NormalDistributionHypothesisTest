@@ -69,7 +69,7 @@ namespace NDHTAPI.DocFiles
             builder.StartTable();
 
             // шапка
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 5; i++)
             {
                 builder.InsertCell();
                 builder.InsertHtml(TableHeaderData.TableHeaderEnterData[i]);
@@ -89,6 +89,8 @@ namespace NDHTAPI.DocFiles
                 {
                     builder.InsertCell();
                     builder.Write(probability.ToString());
+                    builder.InsertCell();
+                    builder.Write(data.PartialIntervalLength.ToString());
                 }
                 builder.EndRow();
             }
@@ -148,7 +150,7 @@ namespace NDHTAPI.DocFiles
             builder.StartTable();
 
             // шапка
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 6; i++)
             {
                 builder.InsertCell();
                 builder.InsertHtml(TableHeaderData.TableHeaderResult2Data[i]);
@@ -159,8 +161,6 @@ namespace NDHTAPI.DocFiles
 
             builder.InsertCell();
             builder.Write(data.IntervalsFrequencySum.ToString());
-            builder.InsertCell();
-            builder.Write(data.PartialIntervalLength.ToString());
             builder.InsertCell();
             builder.Write(Math.Round(data.StandartDeviation, 2).ToString());
             builder.InsertCell();

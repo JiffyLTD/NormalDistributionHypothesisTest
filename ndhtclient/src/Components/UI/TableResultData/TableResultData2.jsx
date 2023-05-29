@@ -20,20 +20,6 @@ const TableResultData2 = ({resultData2}) => {
           </semantics>
         </math>
           </td>
-          <td className="border border-primary text-center" width="100pt">
-          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-          <semantics>
-            <mrow>
-              <msubsup>
-                <mi>h</mi>
-              </msubsup>
-            </mrow>
-            <annotation encoding="application/x-tex">
-              h
-            </annotation>
-          </semantics>
-        </math>
-          </td>
           <td className="border border-primary text-center" width="200pt">
           <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
           <semantics>
@@ -154,9 +140,6 @@ const TableResultData2 = ({resultData2}) => {
         <tr>
           <td className="border border-primary text-center" width="100pt">
             {resultData2.intervalsFrequencySum}
-          </td>
-          <td className="border border-primary text-center" width="100pt">
-            {resultData2.partialIntervalLength}
           </td>
           <td className="border border-primary text-center" width="100pt">
            {resultData2.sampleMean.toFixed(2)}

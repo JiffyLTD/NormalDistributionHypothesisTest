@@ -87,6 +87,7 @@ const NormalDestribution = () => {
           endIntervals: resultData.endIntervals,
           frequencyIntervals: resultData.intervalsFrequency,
           probability: probability,
+          partialIntervalLength: resultData.partialIntervalLength,
         });
         setResultData1({
           middleIntervals: resultData.middleIntervals,
@@ -99,7 +100,6 @@ const NormalDestribution = () => {
         });
         setResultData2({
           intervalsFrequencySum: resultData.intervalsFrequencySum,
-          partialIntervalLength: resultData.partialIntervalLength,
           sampleMean: resultData.sampleMean,
           standartDeviation: resultData.standartDeviation,
           pirsonsValuesSum: resultData.pirsonsValuesSum,

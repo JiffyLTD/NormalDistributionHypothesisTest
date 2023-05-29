@@ -16,6 +16,7 @@ const UserManual = () => {
     endIntervals: [810, 820, 830, 840, 850, 860, 870, 880, 890, 900],
     frequencyIntervals: [2, 6, 3, 6, 11, 5, 6, 4, 3, 4],
     probability: 0.05,
+    partialIntervalLength: 10	
   };
   const resultData1 = {
     middleIntervals: [805, 815, 825, 835, 845, 855, 865, 875, 885, 895],
@@ -28,7 +29,6 @@ const UserManual = () => {
   };
   const resultData2 = {
     intervalsFrequencySum: 50,
-    partialIntervalLength: 10	,
     sampleMean: 849.60,
     standartDeviation: 24.76,
     pirsonsValuesSum: 10.44,
@@ -167,8 +167,8 @@ const UserManual = () => {
           Начало интервала <br />
           Конец интервала <br />n <sub>i</sub> - частоты выборки <br />
           α- уровень значимости <br />
-          <span className="fw-bold">Где вычисляемые данные :</span><br />
           h - длина частичного интервала <br />
+          <span className="fw-bold">Где вычисляемые данные :</span><br />
           n - объем выборки <br />
           x <sub>i</sub> - середины интервалов <br />x<sub>i</sub>n
           <sub>i</sub> - данные необходимые для вычисления выборочной средней
@@ -183,7 +183,7 @@ const UserManual = () => {
           </sub>
           ) - значение функции плотности стандартного нормального распределения
           <br />n<sub>i</sub>
-          <sup>t</sup> - теоритические частоты
+          <sup>t</sup> - теоретические частоты
           <br />
           x̅ - выборочная средняя
           <br />

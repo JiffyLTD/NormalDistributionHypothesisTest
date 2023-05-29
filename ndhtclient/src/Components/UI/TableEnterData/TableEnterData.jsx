@@ -39,6 +39,11 @@ const TableEnterData = ({ enterData }) => {
               cell.className = "border border-primary text-center";
               cell.innerText = enterData.probability;
               row.appendChild(cell);
+
+              let cell2 = document.createElement("td");
+              cell2.className = "border border-primary text-center";
+              cell2.innerText = enterData.partialIntervalLength;
+              row.appendChild(cell2);
             }
 
             table.appendChild(row);
@@ -76,6 +81,20 @@ const TableEnterData = ({ enterData }) => {
               <mi>α</mi>
             </mrow>
             <annotation encoding="application/x-tex">\alpha</annotation>
+          </semantics>
+        </math>
+          </td>
+          <td className="border border-primary text-center" width="100pt">
+          <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+          <semantics>
+            <mrow>
+              <msubsup>
+                <mi>h</mi>
+              </msubsup>
+            </mrow>
+            <annotation encoding="application/x-tex">
+              h
+            </annotation>
           </semantics>
         </math>
           </td>

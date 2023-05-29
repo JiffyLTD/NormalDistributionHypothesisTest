@@ -6,7 +6,7 @@ const Main = () => {
   document.title = "Главная";
 
   const coursWorkTopic = {
-    title: "Проверка гипотезы о нормальном распределении",
+    title: "Анализ точности веса выпускаемой продукции на основе гипотезы о законе нормального распределения",
     content: <p>Рекомендуем для начала ознакомиться с <a className="text-light" href="/userManual">руководством пользования</a>, а затем вы можете <a className="text-light" href="/normalDestribution">приступить к работе</a></p>
   };
 

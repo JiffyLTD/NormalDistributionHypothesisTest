@@ -1,6 +1,5 @@
 ﻿using Aspose.Cells;
 using Aspose.Cells.Charts;
-using Aspose.Cells.Drawing;
 using Aspose.Words;
 using NDHTAPI.DocumentsFiles;
 using NDHTAPI.Models;

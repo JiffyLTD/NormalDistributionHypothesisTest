@@ -179,10 +179,10 @@ namespace NDHTAPI.DocFiles
             Chart chart = worksheet.Charts[chartIndex];
 
             // Задаем ширину диаграммы
-            chart.ChartObject.Width = 1000;
+            chart.ChartObject.Width = 1200;
 
             // Задаем высоту диаграммы
-            chart.ChartObject.Height = 500;
+            chart.ChartObject.Height = 600;
 
             chart.Title.Text = "График";
 

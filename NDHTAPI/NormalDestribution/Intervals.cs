@@ -34,7 +34,7 @@
                 {
                     if (i == startIntervals.Length - 1)
                     {
-                        if (startIntervals[i] < weigth[j] && weigth[j] <= endIntervals[i]) 
+                        if (startIntervals[i] <= weigth[j] && weigth[j] <= endIntervals[i]) 
                             count++;
                     }
                     else

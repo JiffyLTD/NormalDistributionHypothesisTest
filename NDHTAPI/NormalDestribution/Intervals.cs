@@ -2,6 +2,13 @@
 {
     public class Intervals
     {
+        /// <summary>
+        /// Метод получения всех интервалов начала и конца
+        /// </summary>
+        /// <param name="start">Нижний предел интервалов</param>
+        /// <param name="end">Верхний предел интервалов</param>
+        /// <param name="step">Шаг интервала</param>
+        /// <returns>Массивы началов и концов интервалов</returns>
         public static (double[] startIntervals, double[] endIntervals) GetIntervals(double start, double end, double step)
         {
             List<double> startIntervals = new();
@@ -22,6 +29,13 @@
             return (startIntervals.ToArray(), endIntervals.ToArray());
         }
 
+        /// <summary>
+        /// Метод получения частот интервалов
+        /// </summary>
+        /// <param name="weigth">Вес упаковок</param>
+        /// <param name="startIntervals">Начало интервалов</param>
+        /// <param name="endIntervals">Конец интервалов</param>
+        /// <returns>Массив частот интервалов</returns>
         public static double[] GetIntervalsFrequency(double[] weigth, double[] startIntervals, double[] endIntervals)
         {
             List<double> intervalsFrequency = new();

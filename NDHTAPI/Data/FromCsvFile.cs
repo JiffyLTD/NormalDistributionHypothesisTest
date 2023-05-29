@@ -2,6 +2,11 @@
 {
     public class FromCsvFile
     {
+        /// <summary>
+        /// Метод чтения .csv файла 
+        /// </summary>
+        /// <param name="file">.csv файл с фронта</param>
+        /// <returns>Возвращает массив веса упаковок и результат удачности чтения файла</returns>
         public static async Task<(double[] weight, bool result)>  Read(IFormFile file)
         {
             List<double> weight = new();

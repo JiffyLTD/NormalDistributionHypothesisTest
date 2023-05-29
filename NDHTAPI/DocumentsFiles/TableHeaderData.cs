@@ -2,6 +2,9 @@
 {
     public class TableHeaderData
     {
+        /// <summary>
+        /// Формулы входных данных для шапки таблицы
+        /// </summary>
         public static List<string> TableHeaderEnterData = new()
         {
             "Начало интервала",
@@ -9,6 +12,10 @@
             "<math style=\"font-size: 10pt\"  xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\">\r\n            <semantics>\r\n              <mrow>\r\n                <msub>\r\n                  <mi>n</mi>\r\n                  <mi>i</mi>\r\n                </msub>\r\n              </mrow>\r\n              <annotation encoding=\"application/x-tex\">n_i</annotation>\r\n            </semantics>\r\n          </math>",
             "<math style=\"font-size: 10pt\" xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\">\r\n            <semantics>\r\n              <mrow>\r\n                <mi>α</mi>\r\n              </mrow>\r\n              <annotation encoding=\"application/x-tex\">\\alpha</annotation>\r\n            </semantics>\r\n          </math>"
         };
+
+        /// <summary>
+        /// Формулы вычисляемых данных для шапки таблицы №1
+        /// </summary>
         public static List<string> TableHeaderResult1Data = new()
         {
             "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\">\r\n              <semantics>\r\n                <mrow>\r\n                  <msub>\r\n                    <mi>x</mi>\r\n                    <mi>i</mi>\r\n                  </msub>\r\n                </mrow>\r\n                <annotation encoding=\"application/x-tex\">x_i</annotation>\r\n              </semantics>\r\n            </math>",
@@ -19,6 +26,10 @@
             "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\">\r\n              <semantics>\r\n                <mrow>\r\n                  <msubsup>\r\n                    <mi>n</mi>\r\n                    <mi>i</mi>\r\n                    <mi>t</mi>\r\n                  </msubsup>\r\n                </mrow>\r\n                <annotation encoding=\"application/x-tex\">n_i^t</annotation>\r\n              </semantics>\r\n            </math>",
             "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\">\r\n              <semantics>\r\n                <mrow>\r\n                  <mfrac>\r\n                    <mrow>\r\n                      <mo stretchy=\"false\">(</mo>\r\n                      <msub>\r\n                        <mi>n</mi>\r\n                        <mi>i</mi>\r\n                      </msub>\r\n                      <mo>−</mo>\r\n                      <msubsup>\r\n                        <mi>n</mi>\r\n                        <mi>i</mi>\r\n                        <mi>t</mi>\r\n                      </msubsup>\r\n                      <msup>\r\n                        <mo stretchy=\"false\">)</mo>\r\n                        <mn>2</mn>\r\n                      </msup>\r\n                    </mrow>\r\n                    <msubsup>\r\n                      <mi>n</mi>\r\n                      <mi>i</mi>\r\n                      <mi>t</mi>\r\n                    </msubsup>\r\n                  </mfrac>\r\n                </mrow>\r\n                <annotation encoding=\"application/x-tex\">\r\n                  \\frac(n_i - n_i^t)^2n_i^t\r\n                </annotation>\r\n              </semantics>\r\n            </math>",
         };
+
+        /// <summary>
+        /// Формулы вычисляемых данных для шапки таблицы №2
+        /// </summary>
         public static List<string> TableHeaderResult2Data = new()
         {
             "<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\">\r\n          <semantics>\r\n            <mrow>\r\n              <msubsup>\r\n                <mi>n</mi>\r\n              </msubsup>\r\n            </mrow>\r\n            <annotation encoding=\"application/x-tex\">\r\n              n\r\n            </annotation>\r\n          </semantics>\r\n        </math>",

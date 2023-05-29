@@ -9,6 +9,12 @@ namespace NDHTAPI.DocFiles
 {
     public class Doc
     {
+        /// <summary>
+        /// Создание документов с результатами вычислений (.docx, .pdf)
+        /// </summary>
+        /// <param name="data">Объект вычислений</param>
+        /// <param name="probability">Уровень значимости</param>
+        /// <param name="result">Результат проверки нормального распределения</param>
         public static void CreateNewDoc(PopulationOfData data, double probability, string result)
         {
             Document doc = new();
@@ -38,6 +44,11 @@ namespace NDHTAPI.DocFiles
             doc.Save("ResultDocuments\\NDHT.pdf");
         }
 
+        /// <summary>
+        /// Переход на новую строку в документе .docx
+        /// </summary>
+        /// <param name="builder">Объект builder документа</param>
+        /// <param name="count">Количество переходов на новую строку</param>
         private static void CreateEnter(DocumentBuilder builder, int count)
         {
             for (int i = 0; i < count; i++)
@@ -46,6 +57,12 @@ namespace NDHTAPI.DocFiles
             }
         }
 
+        /// <summary>
+        /// Создание таблицы входных данных
+        /// </summary>
+        /// <param name="builder">Объект builder документа</param>
+        /// <param name="data">Объект вычислений</param>
+        /// <param name="probability">Уровень значимости</param>
         private static void CreateEnterDataTable(DocumentBuilder builder, PopulationOfData data, double probability)
         {
             builder.Write("Таблица 1 - Входные данные");
@@ -79,6 +96,11 @@ namespace NDHTAPI.DocFiles
             builder.EndTable();
         }
 
+        /// <summary>
+        /// Метод создания таблицы вычислений №1
+        /// </summary>
+        /// <param name="builder">Объект builder документа</param>
+        /// <param name="data">Объект вычислений</param>
         private static void CreateResult1DataTable(DocumentBuilder builder, PopulationOfData data)
         {
             builder.Write("Таблица 2 - Вычисляемые данные");
@@ -115,6 +137,11 @@ namespace NDHTAPI.DocFiles
             builder.EndTable();
         }
 
+        /// <summary>
+        /// Метод создания таблицы вычислений №2
+        /// </summary>
+        /// <param name="builder">Объект builder документа</param>
+        /// <param name="data">Объект вычислений</param>
         private static void CreateResult2DataTable(DocumentBuilder builder, PopulationOfData data)
         {
             builder.Write("Таблица 3 - Вычисляемые данные");
@@ -150,6 +177,11 @@ namespace NDHTAPI.DocFiles
             builder.EndTable();
         }
 
+        /// <summary>
+        /// Метод создания графика (график создается в excel документе, затем из него формируется .png изображение и вставляется в .doc документ)
+        /// </summary>
+        /// <param name="builder">Объект builder документа</param>
+        /// <param name="data">Объект вычислений</param>
         private static void CreateChart(DocumentBuilder builder, PopulationOfData data)
         {
             // Создаем новый документ Excel

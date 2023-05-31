@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const TableResultData2 = ({resultData2}) => {
   return (

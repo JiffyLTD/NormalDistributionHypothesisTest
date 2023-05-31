@@ -18,6 +18,7 @@ const TableResultData1 = ({ resultData1 }) => {
         let cell = document.createElement("td");
         cell.className = "border border-primary text-center";
 
+        try{
         switch (j) {
           case 0:
             cell.innerText = resultData1.middleIntervals[i];
@@ -41,6 +42,9 @@ const TableResultData1 = ({ resultData1 }) => {
             cell.innerText = resultData1.pirsonsValues[i].toFixed(2);
             break;
         }
+      }catch{
+        cell.innerText = "NaN";
+      }
 
         row.appendChild(cell);
       }

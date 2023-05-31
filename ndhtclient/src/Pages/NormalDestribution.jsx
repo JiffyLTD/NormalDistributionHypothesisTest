@@ -57,7 +57,20 @@ const NormalDestribution = () => {
 
   useEffect(() => {
     if(labels && enterData && resultData1 && resultData2 && resultMessage){
-      setResultIsReady(true);
+      let elem = document.getElementById("list-error");
+      elem.innerHTML = "";
+      if(enterData.frequencyIntervals[2] > 0){
+        setResultIsReady(true);
+      }else{
+        for(let i = 0; i < enterData.frequencyIntervals.length; i++){
+          if(enterData.frequencyIntervals[i] === 0){
+            let li = document.createElement("li");
+            li.textContent = "Для интервала " + enterData.startIntervals[i] + " - " + enterData.endIntervals[i] + " значение частоты 0. ";
+            elem.appendChild(li);
+          }
+        }
+        setError("Установите корректные интервалы");
+      }
     }
   }, [labels, enterData, resultData1, resultData2, resultMessage])
 
@@ -77,6 +90,7 @@ const NormalDestribution = () => {
 
       if (result.status === 200) {
         let resultData = result.data.populationOfData;
+
         let labels = [];
         for(let i = 0; i < resultData.startIntervals.length; i++){
           labels[i] = `${resultData.startIntervals[i]} - ${resultData.endIntervals[i]}`;
@@ -142,7 +156,12 @@ const NormalDestribution = () => {
           ) : (
             ""
           )}
-          <span className="text-danger">{error}</span>
+        </div>
+        <ul id="list-error" className="text-danger">
+  
+        </ul>
+        <span className="text-danger">{error}</span>
+        <div>
         </div>
       </div>
       {resultIsReady ? (

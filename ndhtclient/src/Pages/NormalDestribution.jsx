@@ -55,23 +55,36 @@ const NormalDestribution = () => {
   }, [probability, selectedFile, step, start, end]);
 
   useEffect(() => {
-    if(labels && enterData && resultData1 && resultData2 && resultMessage){
-      let elem = document.getElementById("list-error");
-      elem.innerHTML = "";
-      if(enterData.frequencyIntervals[2] > 0){
+    if (labels && enterData && resultData1 && resultData2 && resultMessage) {
+      if (frequencyIntervalsIsValid(enterData.frequencyIntervals)) {
         setResultIsReady(true);
-      }else{
-        for(let i = 0; i < enterData.frequencyIntervals.length; i++){
-          if(enterData.frequencyIntervals[i] === 0){
-            let li = document.createElement("li");
-            li.textContent = "Для интервала " + enterData.startIntervals[i] + " - " + enterData.endIntervals[i] + " значение частоты 0. ";
-            elem.appendChild(li);
-          }
-        }
+      } else {
         setError("Установите корректные интервалы");
       }
     }
-  }, [labels, enterData, resultData1, resultData2, resultMessage])
+  }, [labels, enterData, resultData1, resultData2, resultMessage]);
+
+  const frequencyIntervalsIsValid = (data) =>{
+    let isValid = true;
+    let elem = document.getElementById("list-error");
+    elem.innerHTML = "";
+
+    for(let i = 0;i < data.length; i++){
+      if(data[i] === 0){
+        isValid = false;
+        let li = document.createElement("li");
+        li.textContent =
+          "Для интервала " +
+          enterData.startIntervals[i] +
+          " - " +
+          enterData.endIntervals[i] +
+          " значение частоты 0. ";
+        elem.appendChild(li);
+      }
+    }
+
+    return isValid;
+  }
 
   const uploadData = async () => {
     setResultIsReady(false);
@@ -86,13 +99,16 @@ const NormalDestribution = () => {
 
     try {
       let result = await ServiceAPI.NormalDestribution(formData);
+      console.log(result);
 
       if (result.status === 200) {
         let resultData = result.data.populationOfData;
 
         let labels = [];
-        for(let i = 0; i < resultData.startIntervals.length; i++){
-          labels[i] = `${resultData.startIntervals[i]} - ${resultData.endIntervals[i]}`;
+        for (let i = 0; i < resultData.startIntervals.length; i++) {
+          labels[
+            i
+          ] = `${resultData.startIntervals[i]} - ${resultData.endIntervals[i]}`;
         }
         setLabels(labels);
         setEnterData({
@@ -121,10 +137,21 @@ const NormalDestribution = () => {
         });
         setResultMessage(result.data.message);
       } else {
-        setError(result.data.value);
+        console.log(result);
       }
-    } catch {
-      setError("Ошибка сети. Попробуйте позже.");
+    } catch (error) {
+      if (error.response.status === 400) {
+        setError("Ошибка чтения файла.");
+        let elem = document.getElementById("list-error");
+        elem.innerHTML = "";
+        for(let i = 0; i < error.response.data.length; i++){
+          let li = document.createElement("li");
+          li.textContent = error.response.data[i];
+          elem.appendChild(li);
+        }
+      } else {
+        setError("Ошибка сети. Попробуйте позже.");
+      }
     }
     setIsLoad(false);
   };
@@ -136,9 +163,14 @@ const NormalDestribution = () => {
   return (
     <div className="border rounded bg-white container">
       <div className="mt-5 mb-5 ms-5">
-        <FileInputBlock setSelectedFile={setSelectedFile}/>
-        <ProbabilityInputBlock setProbability={setProbability}/>
-        <IntervalsInputBlock setStart={setStart} setEnd={setEnd} setStep={setStep} start={start}/>
+        <FileInputBlock setSelectedFile={setSelectedFile} />
+        <ProbabilityInputBlock setProbability={setProbability} />
+        <IntervalsInputBlock
+          setStart={setStart}
+          setEnd={setEnd}
+          setStep={setStep}
+          start={start}
+        />
         <button
           type="button"
           className="btn btn-primary mt-3 mb-2"
@@ -156,25 +188,21 @@ const NormalDestribution = () => {
             ""
           )}
         </div>
-        <ul id="list-error" className="text-danger">
-  
-        </ul>
         <span className="text-danger">{error}</span>
-        <div>
-        </div>
+        <ul id="list-error" className="text-danger"></ul>
       </div>
       {resultIsReady ? (
         <div className="mb-2">
-          <a href={pdfHref} target="_blank">
-          <button type="button" className="btn btn-danger">
-            Сохранить в .pdf
-          </button>
+          <a href={pdfHref} target="_blank" rel="noopener">
+            <button type="button" className="btn btn-danger">
+              Сохранить в .pdf
+            </button>
           </a>
           &nbsp; или &nbsp;
-          <a href={docHref} target="_blank">
-          <button type="button" className="btn btn-primary">
-            Сохранить в .doc
-          </button>
+          <a href={docHref} target="_blank" rel="noopener">
+            <button type="button" className="btn btn-primary">
+              Сохранить в .doc
+            </button>
           </a>
           <button
             type="button"
@@ -188,7 +216,7 @@ const NormalDestribution = () => {
             resultData1={resultData1}
             resultData2={resultData2}
             resultMessage={resultMessage}
-            labels = {labels}
+            labels={labels}
           />
         </div>
       ) : (

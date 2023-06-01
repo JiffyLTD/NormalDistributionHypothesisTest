@@ -28,7 +28,7 @@ const IntervalsInputBlock = ({ setStart, setEnd, setStep, start }) => {
       i += 10;
     }
     let selectStep = document.getElementById("step-select");
-    for (let i = 5; i <= 25; ) {
+    for (let i = 5; i <= 30; ) {
       let opt = document.createElement("option");
       opt.value = i;
       opt.text = i;

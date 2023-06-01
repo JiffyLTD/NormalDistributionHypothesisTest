@@ -22,8 +22,8 @@ const Header = () => {
             </a>
           </h4>
           <h4>
-            <a className={styles.link} href="/other">
-              Прочее
+            <a className={styles.link} href="/about">
+              О нас
             </a>
           </h4>
           </div>

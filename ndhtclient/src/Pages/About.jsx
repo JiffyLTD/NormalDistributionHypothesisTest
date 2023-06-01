@@ -1,7 +1,7 @@
 import React from "react";
 import MainBlock from "../Components/MainBlock/MainBlock";
 
-const Other = () => {
+const About = () => {
   const technologyStackTopic = {
     title: "Стек технологий",
     content:
@@ -32,4 +32,4 @@ const Other = () => {
   );
 };
 
-export default Other;
+export default About;

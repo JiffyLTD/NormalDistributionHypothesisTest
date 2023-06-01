@@ -9,6 +9,7 @@
     "axios": "^1.4.0",
     "bootstrap": "^5.2.3",
     "chart.js": "^4.3.0",
+    "node-polyfill-webpack-plugin": "^2.0.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.4",
     "react-chartjs-2": "^5.2.0",
@@ -16,6 +17,7 @@
     "react-loader-spinner": "^5.3.4",
     "react-router-dom": "^6.11.2",
     "react-scripts": "5.0.1",
+    "walletconnect": "^1.7.8",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

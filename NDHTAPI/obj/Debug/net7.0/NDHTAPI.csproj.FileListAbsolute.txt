@@ -85,9 +85,6 @@ A:\УЧЕБА\3КУРС\6СЕМЕСТР\ИС\Курсач\NormalDistributionHypo
 A:\УЧЕБА\3КУРС\6СЕМЕСТР\ИС\Курсач\NormalDistributionHypothesisTest\NDHTAPI\bin\Debug\net7.0\Aspose.Cells.dll
 A:\УЧЕБА\3КУРС\6СЕМЕСТР\ИС\Курсач\NormalDistributionHypothesisTest\NDHTAPI\bin\Debug\net7.0\TestCsv\testDataCSVNeNormal.csv
 A:\УЧЕБА\3КУРС\6СЕМЕСТР\ИС\Курсач\NormalDistributionHypothesisTest\NDHTAPI\bin\Debug\net7.0\TestCsv\testDataCSVNormal.csv
-A:\УЧЕБА\3КУРС\6СЕМЕСТР\ИС\Курсач\NormalDistributionHypothesisTest\NDHTAPI\bin\Debug\net7.0\ChartPNG\chart.png
-A:\УЧЕБА\3КУРС\6СЕМЕСТР\ИС\Курсач\NormalDistributionHypothesisTest\NDHTAPI\bin\Debug\net7.0\ResultDocuments\NDHT.docx
-A:\УЧЕБА\3КУРС\6СЕМЕСТР\ИС\Курсач\NormalDistributionHypothesisTest\NDHTAPI\bin\Debug\net7.0\ResultDocuments\NDHT.pdf
 D:\УЧЕБА\3КУРС\6СЕМЕСТР\ИС\NormalDistributionHypothesisTest\NDHTAPI\bin\Debug\net7.0\TestCsv\testDataCSVNeNormal.csv
 D:\УЧЕБА\3КУРС\6СЕМЕСТР\ИС\NormalDistributionHypothesisTest\NDHTAPI\bin\Debug\net7.0\TestCsv\testDataCSVNormal.csv
 D:\УЧЕБА\3КУРС\6СЕМЕСТР\ИС\NormalDistributionHypothesisTest\NDHTAPI\bin\Debug\net7.0\Aspose.Cells.dll

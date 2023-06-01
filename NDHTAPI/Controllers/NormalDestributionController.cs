@@ -28,7 +28,7 @@ namespace NDHTAPI.Controllers
             var weightFromFile = await FromCsvFile.Read(file);
 
             if (!weightFromFile.result)
-                return Results.BadRequest("Ошибка чтения файла, проверьте его содержимое.");
+                return Results.BadRequest(weightFromFile.errors);
 
             var intervalsFrequencyFiltred = Intervals.GetIntervalsFrequency(weightFromFile.weight, intervals.startIntervals, intervals.endIntervals);
 

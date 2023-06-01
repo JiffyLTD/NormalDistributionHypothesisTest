@@ -40,8 +40,126 @@ namespace NDHTAPI.DocFiles
 
             builder.Write("По результатам вычислений и по графику мы можем сделать вывод что - " + result);
 
+            builder.InsertBreak(BreakType.PageBreak); // делаем разрыв страницы
+
+            builder.Font.Size = 16;
+            builder.Bold = true;
+            builder.Write("Справочная информация");
+            builder.Bold = false;
+            builder.Font.Size = 14;
+
+            CreateEnter(builder, 2);
+            CreateEnterDataTableInfo(builder);// создаем инфо-таблицу входных данных
+            CreateEnter(builder, 1);
+            CreateResult1DataTableInfo(builder);// создаем первую инфо-таблицу вычисляемых данных
+            CreateEnter(builder, 1);
+            CreateResult2DataTableInfo(builder);// создаем вторую инфо-таблицу вычисляемых данных
+
             doc.Save("ResultDocuments\\NDHT.docx");
             doc.Save("ResultDocuments\\NDHT.pdf");
+        }
+
+        private static void CreateEnterDataTableInfo(DocumentBuilder builder)
+        {
+            builder.Write("Таблица 4 - Информация о входных данных");
+            builder.StartTable();
+
+            // шапка
+            for (int i = 0; i < 5; i++)
+            {
+                builder.InsertCell();
+                builder.InsertHtml(TableHeaderData.TableHeaderEnterData[i]);
+            }
+
+            builder.EndRow();
+
+            builder.InsertCell();
+            builder.Write("Со скольки грамм начинается интервал");
+            builder.InsertCell();
+            builder.Write("На скольки граммах заканчивается интервал");
+            builder.InsertCell();
+            builder.Write("Количество продукта в указанном интервале");
+            builder.InsertCell();
+            builder.Write("Уровень значимости");
+            builder.InsertCell();
+            builder.Write("Шаг интервала");
+
+            builder.EndRow();
+
+            builder.EndTable();
+        }
+        private static void CreateResult1DataTableInfo(DocumentBuilder builder)
+        {
+            builder.Write("Таблица 5 - Информация о вычисляемых данных");
+            builder.Font.Size = 10;
+            builder.StartTable();
+
+            // шапка
+            for (int i = 0; i < 7; i++)
+            {
+                builder.InsertCell();
+                builder.InsertHtml(TableHeaderData.TableHeaderResult1Data[i]);
+            }
+
+            builder.EndRow();
+
+
+            builder.InsertCell();
+            builder.Write("Середина интервала");
+            builder.InsertCell();
+            builder.Write("Взвешенная сумма");
+            builder.InsertCell();
+            builder.Write("Взвешенная сумма квадратов отклонений");
+            builder.InsertCell();
+            builder.Write("Стандартизированные значения середин интервалов");
+            builder.InsertCell();
+            builder.Write("Значение функции плотности стандартного нормального распределения");
+            builder.InsertCell();
+            builder.Write("Теоретические частоты");
+            builder.InsertCell();
+            builder.Write("Критерий согласия пирсона для интервала");
+            builder.EndRow();
+
+
+            builder.EndTable();
+
+            builder.Font.Size = 14;
+        }
+
+        private static void CreateResult2DataTableInfo(DocumentBuilder builder)
+        {
+            builder.Write("Таблица 6 - Информация о вычисляемых данных");
+            builder.Font.Size = 10;
+            builder.StartTable();
+
+            // шапка
+            for (int i = 0; i < 6; i++)
+            {
+                builder.InsertCell();
+                builder.InsertHtml(TableHeaderData.TableHeaderResult2Data[i]);
+            }
+
+            builder.EndRow();
+
+
+            builder.InsertCell();
+            builder.Write("Объем выборки");
+            builder.InsertCell();
+            builder.Write("Выборочная средняя");
+            builder.InsertCell();
+            builder.Write("Среднее квадратическое отклонение");
+            builder.InsertCell();
+            builder.Write("Количество степеней свободы");
+            builder.InsertCell();
+            builder.Write("Критическое значение распределения");
+            builder.InsertCell();
+            builder.Write("Наблюдаемый критерий согласия Пирсона");
+            builder.EndRow();
+
+
+            builder.EndTable();
+
+            builder.Font.Size = 14;
         }
 
         /// <summary>
@@ -191,7 +309,7 @@ namespace NDHTAPI.DocFiles
             Worksheet worksheet = workbook.Worksheets[0];
 
             // Добавляем некоторые данные в ячейки
-            for(int i = 0; i < data.IntervalsFrequency.Length; i++)
+            for (int i = 0; i < data.IntervalsFrequency.Length; i++)
             {
                 worksheet.Cells[$"A{i + 1}"].PutValue(data.IntervalsFrequency[i]);
             }

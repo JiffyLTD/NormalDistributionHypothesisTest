@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\УЧЕБА\\3КУРС\\6СЕМЕСТР\\ИС\\NormalDistributionHypothesisTest\\NDHTAPI\\NDHTAPI.csproj": {}
+    "A:\\УЧЕБА\\3КУРС\\6СЕМЕСТР\\ИС\\Курсач\\NormalDistributionHypothesisTest\\NDHTAPI\\NDHTAPI.csproj": {}
   },
   "projects": {
-    "D:\\УЧЕБА\\3КУРС\\6СЕМЕСТР\\ИС\\NormalDistributionHypothesisTest\\NDHTAPI\\NDHTAPI.csproj": {
+    "A:\\УЧЕБА\\3КУРС\\6СЕМЕСТР\\ИС\\Курсач\\NormalDistributionHypothesisTest\\NDHTAPI\\NDHTAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\УЧЕБА\\3КУРС\\6СЕМЕСТР\\ИС\\NormalDistributionHypothesisTest\\NDHTAPI\\NDHTAPI.csproj",
+        "projectUniqueName": "A:\\УЧЕБА\\3КУРС\\6СЕМЕСТР\\ИС\\Курсач\\NormalDistributionHypothesisTest\\NDHTAPI\\NDHTAPI.csproj",
         "projectName": "NDHTAPI",
-        "projectPath": "D:\\УЧЕБА\\3КУРС\\6СЕМЕСТР\\ИС\\NormalDistributionHypothesisTest\\NDHTAPI\\NDHTAPI.csproj",
-        "packagesPath": "C:\\Users\\gosha\\.nuget\\packages\\",
-        "outputPath": "D:\\УЧЕБА\\3КУРС\\6СЕМЕСТР\\ИС\\NormalDistributionHypothesisTest\\NDHTAPI\\obj\\",
+        "projectPath": "A:\\УЧЕБА\\3КУРС\\6СЕМЕСТР\\ИС\\Курсач\\NormalDistributionHypothesisTest\\NDHTAPI\\NDHTAPI.csproj",
+        "packagesPath": "C:\\Users\\akope\\.nuget\\packages\\",
+        "outputPath": "A:\\УЧЕБА\\3КУРС\\6СЕМЕСТР\\ИС\\Курсач\\NormalDistributionHypothesisTest\\NDHTAPI\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\gosha\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\akope\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -89,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

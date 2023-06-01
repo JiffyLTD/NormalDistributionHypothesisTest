@@ -5,7 +5,6 @@ import { InfinitySpin } from "react-loader-spinner";
 import FileInputBlock from "../Components/FileInputBlock/FileInputBlock";
 import ProbabilityInputBlock from "../Components/ProbabilityInputBlock/ProbabilityInputBlock";
 import IntervalsInputBlock from "../Components/IntervalsInputBlock/IntervalsInputBlock";
-import { html2canvas } from 'html2canvas';
 
 const NormalDestribution = () => {
   document.title = "Приступить к работе";

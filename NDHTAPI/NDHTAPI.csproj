@@ -7,23 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="ChartPNG\chart.png" />
-    <None Remove="ResultDocuments\NDHT.docx" />
-    <None Remove="ResultDocuments\NDHT.pdf" />
     <None Remove="TestCsv\testDataCSVNeNormal.csv" />
     <None Remove="TestCsv\testDataCSVNormal.csv" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="ChartPNG\chart.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="ResultDocuments\NDHT.docx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="ResultDocuments\NDHT.pdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="TestCsv\testDataCSVNeNormal.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -39,6 +27,11 @@
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.5" />
     <PackageReference Include="Perfolizer" Version="0.3.4" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ChartPNG\" />
+    <Folder Include="ResultDocuments\" />
   </ItemGroup>
 
 </Project>

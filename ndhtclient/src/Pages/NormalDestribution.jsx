@@ -140,6 +140,7 @@ const NormalDestribution = () => {
         console.log(result);
       }
     } catch (error) {
+      try{
       if (error.response.status === 400) {
         setError("Ошибка чтения файла.");
         let elem = document.getElementById("list-error");
@@ -149,9 +150,11 @@ const NormalDestribution = () => {
           li.textContent = error.response.data[i];
           elem.appendChild(li);
         }
-      } else {
-        setError("Ошибка сети. Попробуйте позже.");
       }
+    }
+    catch{
+      setError("Ошибка соединения с сервером. Попробуйте позже.");
+    }
     }
     setIsLoad(false);
   };

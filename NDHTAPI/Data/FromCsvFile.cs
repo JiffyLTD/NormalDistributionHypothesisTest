@@ -8,7 +8,7 @@ namespace NDHTAPI.Data
         /// Метод чтения .csv файла 
         /// </summary>
         /// <param name="file">.csv файл с фронта</param>
-        /// <returns>Возвращает массив веса упаковок и результат удачности чтения файла</returns>
+        /// <returns>Возвращает массив веса упаковок и результат удачности чтения файла, в случае наличия ошибок возвращает так же массив ошибок</returns>
         public static async Task<(double[] weight,string errorType, List<string> errors, bool result)> Read(IFormFile file)
         {
             List<double> weight = new();

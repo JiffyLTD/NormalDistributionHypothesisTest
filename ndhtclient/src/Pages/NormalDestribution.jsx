@@ -9,8 +9,6 @@ import IntervalsInputBlock from "../Components/IntervalsInputBlock/IntervalsInpu
 const NormalDestribution = () => {
   document.title = "Приступить к работе";
 
-  //const docHref = "https://localhost:7117/ResultDocuments/NDHT.docx";
-  //const pdfHref = "https://localhost:7117/ResultDocuments/NDHT.pdf";
   const urlDoc = "https://localhost:7117/ResultDocuments/";
 
   const [docHref, setDocHref] = useState('');

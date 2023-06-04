@@ -5,6 +5,7 @@
     {
         private PopulationOfData(double[] startIntervals, double[] endIntervals, double[] intervalsFrequency)
         {
+            Id = Guid.NewGuid();
             StartIntervals = startIntervals;
             EndIntervals = endIntervals;
             IntervalsFrequency = intervalsFrequency;
@@ -60,6 +61,11 @@
 
             return pop;
         }
+
+        /// <summary>
+        /// Id вычислений
+        /// </summary>
+        public Guid Id { get; private set; }
 
         /// <summary>
         /// Список старта интервалов

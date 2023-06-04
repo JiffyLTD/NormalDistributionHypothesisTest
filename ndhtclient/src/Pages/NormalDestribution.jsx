@@ -9,9 +9,12 @@ import IntervalsInputBlock from "../Components/IntervalsInputBlock/IntervalsInpu
 const NormalDestribution = () => {
   document.title = "Приступить к работе";
 
-  const docHref = "https://localhost:7117/ResultDocuments/NDHT.docx";
-  const pdfHref = "https://localhost:7117/ResultDocuments/NDHT.pdf";
+  //const docHref = "https://localhost:7117/ResultDocuments/NDHT.docx";
+  //const pdfHref = "https://localhost:7117/ResultDocuments/NDHT.pdf";
+  const urlDoc = "https://localhost:7117/ResultDocuments/";
 
+  const [docHref, setDocHref] = useState('');
+  const [pdfHref, setPdfHref] = useState('');
   const [labels, setLabels] = useState([]);
   const [start, setStart] = useState(0);
   const [end, setEnd] = useState(0);
@@ -103,6 +106,9 @@ const NormalDestribution = () => {
 
       if (result.status === 200) {
         let resultData = result.data.populationOfData;
+
+        setDocHref(urlDoc + resultData.id + '.docx');
+        setPdfHref(urlDoc + resultData.id + '.pdf');
 
         let labels = [];
         for (let i = 0; i < resultData.startIntervals.length; i++) {

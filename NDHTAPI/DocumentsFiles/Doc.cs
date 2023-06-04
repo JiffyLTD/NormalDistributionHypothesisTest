@@ -55,8 +55,8 @@ namespace NDHTAPI.DocFiles
             CreateEnter(builder, 1);
             CreateResult2DataTableInfo(builder);// создаем вторую инфо-таблицу вычисляемых данных
 
-            doc.Save("ResultDocuments\\NDHT.docx");
-            doc.Save("ResultDocuments\\NDHT.pdf");
+            doc.Save($"ResultDocuments\\{data.Id}.docx");
+            doc.Save($"ResultDocuments\\{data.Id}.pdf");
         }
 
         private static void CreateEnterDataTableInfo(DocumentBuilder builder)
@@ -365,9 +365,9 @@ namespace NDHTAPI.DocFiles
             chart.NSeries[1].Name = "График нормального распределения";
 
             // Сохраняем диаграмму как изображение
-            chart.ToImage("ChartPNG\\chart.png");
+            chart.ToImage($"ChartPNG\\{data.Id}.png");
 
-            builder.InsertImage("ChartPNG\\chart.png");
+            builder.InsertImage($"ChartPNG\\{data.Id}.png");
         }
     }
 }

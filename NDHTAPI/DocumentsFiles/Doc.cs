@@ -338,14 +338,17 @@ namespace NDHTAPI.DocFiles
 
             // Добавляем NSeries (источник данных диаграммы) к диаграмме
             chart.NSeries.Add($"A1:B{data.TheoreticalFrequencies.Length + 1}", true);
+        
             // задаем значения по оси Х
             chart.NSeries.CategoryData = $"C1:C{data.MiddleIntervals.Length + 1}";
 
             // Устанавливаем тип диаграммы 2-й NSeries для отображения в виде линейной диаграммы
+            chart.NSeries[0].GapWidth = 0;
             chart.NSeries[1].Type = ChartType.Line;
 
             // Задаем цвет первой серии диаграммы
-            chart.NSeries[0].Area.ForegroundColor = Color.MediumPurple;
+            chart.NSeries[0].Area.ForegroundColor = Color.MediumVioletRed;
+            chart.NSeries[0].Border.Color = Color.Black;
             // Задаем цвет второй серии диаграммы
             chart.NSeries[1].Border.Color = Color.Indigo;
 

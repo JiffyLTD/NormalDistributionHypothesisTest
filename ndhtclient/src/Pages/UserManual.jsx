@@ -8,8 +8,7 @@ import ChartResult from "../Components/UI/ChartResult/ChartResult";
 const UserManual = () => {
   document.title = "Руководство пользования";
 
-  const csvNeNormalHref =
-    "https://localhost:7117/TestCsv/testDataCSVNeNormal.csv";
+  const csvNeNormalHref = "https://localhost:7117/TestCsv/testDataCSVNeNormal.csv";
   const csvNormalHref = "https://localhost:7117/TestCsv/testDataCSVNormal.csv";
 
   const enterData = {

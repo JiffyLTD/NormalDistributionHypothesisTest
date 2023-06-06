@@ -39,7 +39,11 @@ const ChartResult = ({ dataBar, dataLine, labels }) => {
         type: "bar",
         label: "Гистограмма распределения генеральной совокупности",
         backgroundColor: "MediumVioletRed",
-        data: dataBar.frequencyIntervals
+        data: dataBar.frequencyIntervals,
+        categoryPercentage: 1,
+        barPercentage: 1,
+        borderColor: "black",
+        borderWidth: 1,
       },
     ],
   };

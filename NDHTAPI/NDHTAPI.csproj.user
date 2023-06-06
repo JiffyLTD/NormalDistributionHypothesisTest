@@ -4,7 +4,7 @@
     <ActiveDebugProfile>https</ActiveDebugProfile>
     <Controller_SelectedScaffolderID>ApiControllerEmptyScaffolder</Controller_SelectedScaffolderID>
     <Controller_SelectedScaffolderCategoryPath>root/Common/Api</Controller_SelectedScaffolderCategoryPath>
-    <NameOfLastUsedPublishProfile>A:\УЧЕБА\3КУРС\6СЕМЕСТР\ИС\Курсач\NormalDistributionHypothesisTest\NDHTAPI\Properties\PublishProfiles\FolderProfile.pubxml</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>A:\УЧЕБА\3КУРС\6СЕМЕСТР\ИС\Курсач\NormalDistributionHypothesisTest\NDHTAPI\Properties\PublishProfiles\registry.hub.docker.com_jiffyltd.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>

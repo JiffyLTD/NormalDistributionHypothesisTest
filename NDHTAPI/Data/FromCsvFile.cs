@@ -26,7 +26,15 @@ namespace NDHTAPI.Data
 
                     try
                     {
-                        weight.Add(double.Parse(values[1]));
+                        if (double.Parse(values[1]) < 0)
+                        {
+                            flag = false;
+                            errors.Add("Строка " + i + " значение '" + values[1] + "'");
+                        }
+                        else
+                        {
+                            weight.Add(double.Parse(values[1]));
+                        }
                     }
                     catch 
                     {

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "XnfVADVV/b5o7b7yCr5gALPA8Wu9HlYKa9um1G4yvab+XXLKKh3/Craq4gjgYdkY0yh4EFVQfCyl0LO/Gg6nnA==",
+  "dgSpecHash": "lKGDWVKAXetpMhpEnEQw9M8Ivx/JXgEH4k+uUUCKW+B3hSDKmDJMw6EVXhppuQGFe7IFYYQJiSS7bOtyKFqcvA==",
   "success": true,
   "projectFilePath": "A:\\УЧЕБА\\3КУРС\\6СЕМЕСТР\\ИС\\Курсач\\NormalDistributionHypothesisTest\\NDHTAPI\\NDHTAPI.csproj",
   "expectedPackageFiles": [
@@ -12,6 +12,7 @@
     "C:\\Users\\akope\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\akope\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\akope\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
+    "C:\\Users\\akope\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.18.1\\microsoft.visualstudio.azure.containers.tools.targets.1.18.1.nupkg.sha512",
     "C:\\Users\\akope\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\akope\\.nuget\\packages\\perfolizer\\0.3.4\\perfolizer.0.3.4.nupkg.sha512",
     "C:\\Users\\akope\\.nuget\\packages\\skiasharp\\2.88.3\\skiasharp.2.88.3.nupkg.sha512",

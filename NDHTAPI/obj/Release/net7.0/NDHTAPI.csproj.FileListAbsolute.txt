@@ -41,8 +41,5 @@ A:\УЧЕБА\3КУРС\6СЕМЕСТР\ИС\Курсач\NormalDistributionHypo
 A:\УЧЕБА\3КУРС\6СЕМЕСТР\ИС\Курсач\NormalDistributionHypothesisTest\NDHTAPI\obj\Release\net7.0\NDHTAPI.pdb
 A:\УЧЕБА\3КУРС\6СЕМЕСТР\ИС\Курсач\NormalDistributionHypothesisTest\NDHTAPI\obj\Release\net7.0\NDHTAPI.genruntimeconfig.cache
 A:\УЧЕБА\3КУРС\6СЕМЕСТР\ИС\Курсач\NormalDistributionHypothesisTest\NDHTAPI\obj\Release\net7.0\ref\NDHTAPI.dll
-A:\УЧЕБА\3КУРС\6СЕМЕСТР\ИС\Курсач\NormalDistributionHypothesisTest\NDHTAPI\bin\Release\net7.0\ChartPNG\chart.png
-A:\УЧЕБА\3КУРС\6СЕМЕСТР\ИС\Курсач\NormalDistributionHypothesisTest\NDHTAPI\bin\Release\net7.0\ResultDocuments\NDHT.docx
-A:\УЧЕБА\3КУРС\6СЕМЕСТР\ИС\Курсач\NormalDistributionHypothesisTest\NDHTAPI\bin\Release\net7.0\ResultDocuments\NDHT.pdf
 A:\УЧЕБА\3КУРС\6СЕМЕСТР\ИС\Курсач\NormalDistributionHypothesisTest\NDHTAPI\bin\Release\net7.0\TestCsv\testDataCSVNeNormal.csv
 A:\УЧЕБА\3КУРС\6СЕМЕСТР\ИС\Курсач\NormalDistributionHypothesisTest\NDHTAPI\bin\Release\net7.0\TestCsv\testDataCSVNormal.csv

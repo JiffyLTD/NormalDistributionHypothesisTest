@@ -10,11 +10,15 @@
 
   <ItemGroup>
     <None Remove="TestCsv\testDataCSVNeNormal.csv" />
+    <None Remove="TestCsv\testDataCSVNormal - Копировать.csv" />
     <None Remove="TestCsv\testDataCSVNormal.csv" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="TestCsv\testDataCSVNeNormal.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestCsv\testDataCSVNormal - Копировать.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="TestCsv\testDataCSVNormal.csv">

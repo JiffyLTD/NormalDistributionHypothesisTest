@@ -200,13 +200,13 @@ const NormalDestribution = () => {
       </div>
       {resultIsReady ? (
         <div className="mb-2">
-          <a href={pdfHref} target="_blank" rel="noopener">
+          <a href={pdfHref} target="_blank">
             <button type="button" className="btn btn-danger">
               Сохранить в .pdf
             </button>
           </a>
           &nbsp; или &nbsp;
-          <a href={docHref} target="_blank" rel="noopener">
+          <a href={docHref} rel="noopener">
             <button type="button" className="btn btn-primary">
               Сохранить в .doc
             </button>

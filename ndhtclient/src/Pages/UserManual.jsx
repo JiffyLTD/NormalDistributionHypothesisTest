@@ -527,13 +527,13 @@ const UserManual = () => {
           работе', ввести все настройки из данного примера и убедиться в
           работоспособности программы.
           <br />
-          <a href={csvNormalHref} target="_blank" rel="noopener">
+          <a href={csvNormalHref} rel="noopener">
             <button type="button" className="btn btn-success mt-2">
               Скачать тестовую выборку нормального распределения в формате .csv
             </button>
           </a>
           <br />
-          <a href={csvNeNormalHref} target="_blank" rel="noopener">
+          <a href={csvNeNormalHref} rel="noopener">
             <button type="button" className="btn btn-success mt-2">
               Скачать тестовую выборку не нормального распределения в формате
               .csv
